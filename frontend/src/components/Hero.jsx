@@ -5,19 +5,44 @@ const Hero = () => {
   const [tagline, setTagline] = useState("")
   const [bold, setBold] = useState("")
   const [productName, setProductName] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
 
     const getTagline = async ()=>{
-      const response = await axios.get("http://localhost:3000/tagline")
-      setTagline(response.data.tagline)
-      setBold(response.data.bold)
-      setProductName(response.data.productName || "iPhone 11")
+      try {
+        const response = await axios.get("http://localhost:3000/tagline")
+        setTagline(response.data.tagline)
+        setBold(response.data.bold)
+        setProductName(response.data.productName || "iPhone 11")
+      } catch (error) {
+        console.error("Error fetching tagline:", error)
+        setTagline("Make a ")
+        setBold("Entrance")
+        setProductName("iPhone 11")
+      } finally {
+        setLoading(false)
+      }
     }
 
     getTagline()
 
   },[])
+
+  const handleShopNow = () => {
+    // Add navigation or scroll to products
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+  }
+
+  if (loading) {
+    return (
+      <div className="hero-border">
+        <div className="loading">
+          <div className="loading-spinner"></div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -28,7 +53,7 @@ const Hero = () => {
         <br />
         <h1 className="bold tagline ">{bold}</h1>
         <p className="hero-subtitle">Experience the future of mobile technology</p>
-        <button className="cta-button">Shop Now</button>
+        <button className="cta-button" onClick={handleShopNow}>Shop Now</button>
       </div>
       <div className="right">
         <div className="phone-image">
