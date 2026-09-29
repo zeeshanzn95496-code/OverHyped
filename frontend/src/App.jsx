@@ -16,8 +16,8 @@ function App() {
         </div>
         <Routes>
 
-          <Route className="none" path="/" element={<HomePage />} />
-          <Route className="none" path="/accessories" element={<Accesories />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/accessories" element={<Accesories />} />
 
 
 

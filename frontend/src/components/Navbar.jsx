@@ -6,8 +6,11 @@ const Navbar = () => {
   return (
     <>
       <div className="border">
-        <Link to={"/"}>Home</Link>
-        <Link to={"/accessories"}>Accessories</Link>
+        <div className="navbar-brand">OverHyped</div>
+        <div className="navbar-links">
+          <Link to={"/"}>Home</Link>
+          <Link to={"/accessories"}>Accessories</Link>
+        </div>
       </div>
     </>
   )

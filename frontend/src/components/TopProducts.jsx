@@ -21,7 +21,10 @@ const TopProducts = () => {
         <div className="cards">
             {top4.map((phone, index) =>(
                 <div key={index} className="card">
-                    <h1>{phone}</h1>
+                    <div className="card-image"></div>
+                    <h3 className="card-name">{phone.name}</h3>
+                    <p className="card-price">{phone.price}</p>
+                    <button className="card-button">View Details</button>
                 </div>
             ))}
         </div>

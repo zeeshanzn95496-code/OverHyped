@@ -4,6 +4,7 @@ import axios from "axios"
 const Hero = () => {
   const [tagline, setTagline] = useState("")
   const [bold, setBold] = useState("")
+  const [productName, setProductName] = useState("")
 
   useEffect(()=>{
 
@@ -11,6 +12,7 @@ const Hero = () => {
       const response = await axios.get("http://localhost:3000/tagline")
       setTagline(response.data.tagline)
       setBold(response.data.bold)
+      setProductName(response.data.productName || "iPhone 11")
     }
 
     getTagline()
@@ -25,12 +27,16 @@ const Hero = () => {
         <h1 className='tagline'>{tagline}</h1>
         <br />
         <h1 className="bold tagline ">{bold}</h1>
+        <p className="hero-subtitle">Experience the future of mobile technology</p>
+        <button className="cta-button">Shop Now</button>
       </div>
       <div className="right">
         <div className="phone-image">
-
+          <div className="phone-screen"></div>
+          <div className="phone-notch"></div>
         </div>
-        <h1 className='hero-title'>Iphone 11</h1>
+        <h1 className='hero-title'>{productName}</h1>
+        <p className="hero-price">Starting at $699</p>
       </div>
     </div>
     </>

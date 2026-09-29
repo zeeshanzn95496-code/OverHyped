@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
+  padding: 20px;
 }
 
 .hero-border:hover{
@@ -66,10 +67,10 @@
 }
 
 .tagline{
-  font-size: 200px;
-  line-height: 140px;
+  font-size: 150px;
+  line-height: 120px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 3%;
   transition: transform 0.3s ease;
 }
@@ -91,6 +92,65 @@
 .bold:hover{
   transform: translateX(10px);
   color: #d1304a;
+}
+
+.hero-subtitle{
+  position: absolute;
+  top: 55%;
+  left: 3%;
+  font-size: 24px;
+  color: #666;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.cta-button{
+  position: absolute;
+  top: 62%;
+  left: 3%;
+  padding: 15px 40px;
+  background-color: #EB3855;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(235, 56, 85, 0.3);
+}
+
+.cta-button:hover{
+  background-color: #c92a45;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(235, 56, 85, 0.4);
+}
+
+.phone-screen{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-notch{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 25px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+}
+
+.hero-price{
+  font-size: 24px;
+  color: #333;
+  margin-top: 15px;
+  font-weight: 600;
 }
 
 .top-prod{
@@ -122,30 +182,364 @@
 }
 
 .card{
-  background-color: rgb(52, 81, 132);
+  background-color: white;
   width: 20vw;
-  border-radius: 20pX;
+  border-radius: 20px;
   height: 70%;
-  color: white;
-
+  color: #333;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  justify-content: space-between;
+  font-size: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover{
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  background-color: rgb(62, 91, 142);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.card h1{
-  transition: transform 0.3s ease;
+.card-image{
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.card:hover h1{
-  transform: scale(1.1);
+.card-name{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.card-price{
+  font-size: 18px;
+  color: #EB3855;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.card-button{
+  padding: 10px 25px;
+  background-color: #EB3855;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.card-button:hover{
+  background-color: #c92a45;
+  transform: scale(1.05);
+}
+
+.accessories-page{
+  min-height: 100vh;
+  background-color: #F4EFE6;
+  padding: 100px 50px 50px;
+}
+
+.accessories-header{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.accessories-title{
+  font-size: 48px;
+  color: #EB3855;
+  margin-bottom: 10px;
+}
+
+.accessories-subtitle{
+  font-size: 20px;
+  color: #666;
+}
+
+.accessories-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.accessory-card{
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessory-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.accessory-image{
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.accessory-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessory-category{
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.accessory-name{
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.accessory-price{
+  font-size: 18px;
+  color: #EB3855;
+  font-weight: 700;
+}
+
+.accessory-button{
+  padding: 12px 25px;
+  background-color: #EB3855;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.accessory-button:hover{
+  background-color: #c92a45;
+  transform: scale(1.05);
+}
+
+.error-page{
+  min-height: 100vh;
+  background-color: #F4EFE6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-content{
+  text-align: center;
+  padding: 50px;
+}
+
+.error-code{
+  font-size: 120px;
+  color: #EB3855;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.error-title{
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.error-message{
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.error-button{
+  padding: 15px 40px;
+  background-color: #EB3855;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.error-button:hover{
+  background-color: #c92a45;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(235, 56, 85, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tagline{
+    font-size: 100px;
+    line-height: 80px;
+    top: 20%;
+  }
+
+  .bold{
+    top: 35%;
+    font-size: 100px;
+  }
+
+  .hero-subtitle{
+    top: 45%;
+    font-size: 18px;
+    left: 5%;
+  }
+
+  .cta-button{
+    top: 52%;
+    left: 5%;
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .phone-image{
+    width: 40%;
+    height: 50%;
+  }
+
+  .hero-title{
+    font-size: 60px;
+    top: 65%;
+  }
+
+  .hero-price{
+    font-size: 20px;
+  }
+
+  .card{
+    width: 40vw;
+    height: 60%;
+  }
+
+  .cards{
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-border{
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left{
+    width: 100%;
+    height: 50%;
+  }
+
+  .right{
+    width: 100%;
+    height: 50%;
+  }
+
+  .tagline{
+    font-size: 60px;
+    line-height: 50px;
+    top: 10%;
+    left: 5%;
+  }
+
+  .bold{
+    font-size: 60px;
+    top: 25%;
+    left: 5%;
+  }
+
+  .hero-subtitle{
+    top: 35%;
+    font-size: 14px;
+    left: 5%;
+  }
+
+  .cta-button{
+    top: 42%;
+    left: 5%;
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .phone-image{
+    width: 60%;
+    height: 40%;
+  }
+
+  .hero-title{
+    font-size: 40px;
+    top: 55%;
+  }
+
+  .hero-price{
+    font-size: 16px;
+  }
+
+  .border{
+    width: 80%;
+    height: auto;
+    top: 10px;
+  }
+
+  .title{
+    font-size: 32px;
+  }
+
+  .card{
+    width: 80vw;
+    height: 70%;
+  }
+
+  .cards{
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .accessories-page{
+    padding: 80px 20px 20px;
+  }
+
+  .accessories-title{
+    font-size: 32px;
+  }
+
+  .accessories-subtitle{
+    font-size: 16px;
+  }
+
+  .accessories-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .error-code{
+    font-size: 80px;
+  }
+
+  .error-title{
+    font-size: 24px;
+  }
+
+  .error-message{
+    font-size: 14px;
+  }
 }
