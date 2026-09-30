@@ -1,61 +1,93 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 
 const TopProducts = () => {
-    const [top4, setTop4] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(()=>{
-        const getTop4 = async ()=>{
-            try {
-                const response = await axios.get("http://localhost:3000/top4")
-                setTop4(response.data)
-            } catch (error) {
-                console.error("Error fetching top products:", error)
-                setTop4([
-                    { name: 'iPhone 12', price: '$699', image: 'phone-12', description: 'A14 Bionic chip, 5G capable' },
-                    { name: 'iPhone 13', price: '$799', image: 'phone-13', description: 'A15 Bionic chip, improved battery' },
-                    { name: 'Galaxy S23', price: '$799', image: 'galaxy-s23', description: 'Snapdragon 8 Gen 2, 50MP camera' },
-                    { name: 'Samsung S24', price: '$899', image: 'samsung-s24', description: 'Galaxy AI, titanium frame' }
-                ])
-            } finally {
-                setLoading(false)
-            }
+    const products = [
+        {
+            id: 1,
+            name: 'Halo One',
+            category: 'PHONE',
+            description: 'The conversation starter',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$799',
+            color: '#ff6b6b',
+            image: 'coral'
+        },
+        {
+            id: 2,
+            name: 'Halo Mini',
+            category: 'PHONE',
+            description: 'Small phone. Big entrance.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$649',
+            color: '#4ecdc4',
+            image: 'tide'
+        },
+        {
+            id: 3,
+            name: 'Halo Ultra',
+            category: 'PHONE',
+            description: 'For the overachievers',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$999',
+            color: '#2d2d2d',
+            image: 'black'
+        },
+        {
+            id: 4,
+            name: 'Foldline',
+            category: 'PHONE',
+            description: 'Two screens. One point of view.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$1,299',
+            color: '#9b59b6',
+            image: 'purple'
         }
-        getTop4()
-    }, [])
+    ]
 
-    const handleViewDetails = (phone) => {
-        console.log("View details for:", phone.name)
-        // Add functionality to show product details
-    }
-
-    if (loading) {
-        return (
-            <div className="top-prod">
-                <div className="title-container">
-                    <h1 className='title'>Top 4 Products</h1>
-                </div>
-                <div className="loading">
-                    <div className="loading-spinner"></div>
-                </div>
-            </div>
-        )
+    const handleAddToBag = (product) => {
+        console.log("Add to bag:", product.name)
     }
 
   return (
     <>
-    <div className="top-prod">
-        <div className="title-container">
-            <h1 className='title'>Top 4 Products</h1>
+    <div className="products-section">
+        <div className="products-header">
+            <div className="section-number">01 / THE FLAGSHIP EDIT</div>
+            <h1 className="products-title">Pick your <span className="highlight">main character.</span></h1>
+            <p className="products-subtitle">A tight edit of the standouts. Every phone in this first look earns the second glance.</p>
+            <button className="explore-button">Explore catalogue →</button>
         </div>
-        <div className="cards">
-            {top4.map((phone, index) =>(
-                <div key={index} className="card">
-                    <div className="card-image"></div>
-                    <h3 className="card-name">{phone.name}</h3>
-                    <p className="card-price">{phone.price}</p>
-                    <button className="card-button" onClick={() => handleViewDetails(phone)}>View Details</button>
+        <div className="products-grid">
+            {products.map((product, index) =>(
+                <div key={index} className="product-card">
+                    <div className="card-header">
+                        <span className="card-category">{product.category}</span>
+                        <div className="card-icons">
+                            <span className="icon">♥</span>
+                            <span className="icon">FILM</span>
+                            <span className="icon">→</span>
+                        </div>
+                    </div>
+                    <div className="card-image" style={{ background: product.color }}>
+                        <div className="phone-mockup"></div>
+                    </div>
+                    <div className="card-content">
+                        <h3 className="card-name">{product.name}</h3>
+                        <p className="card-description">{product.description}</p>
+                        <div className="card-rating">
+                            <span className="star">★</span>
+                            <span className="rating-value">{product.rating}</span>
+                            <span className="reviews">{product.reviews}</span>
+                        </div>
+                        <div className="card-footer">
+                            <span className="card-price">{product.price} / from</span>
+                            <button className="add-to-bag" onClick={() => handleAddToBag(product)}>Add to bag +</button>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>

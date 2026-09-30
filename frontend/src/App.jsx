@@ -12,19 +12,10 @@ function App() {
   return (
     <>
       <div className="main">
-        <div className="navbar">
-          <Navbar />
-        </div>
+        <Navbar />
         <Routes>
-
           <Route path="/" element={<HomePage />} />
           <Route path="/accessories" element={<Accesories />} />
-
-           <Route path="/" element={<HomePage />} />
-          <Route path="/accessories" element={<Accesories />} />
-
-
-
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
