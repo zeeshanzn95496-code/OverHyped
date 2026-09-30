@@ -32,6 +32,11 @@
   line-height: 1.5;
 }
 
+.footer-logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer-nav {
   display: flex;
   gap: 60px;

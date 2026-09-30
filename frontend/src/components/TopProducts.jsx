@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TopProducts = () => {
     const products = [
@@ -59,36 +60,38 @@ const TopProducts = () => {
             <div className="section-number">01 / THE FLAGSHIP EDIT</div>
             <h1 className="products-title">Pick your <span className="highlight">main character.</span></h1>
             <p className="products-subtitle">A tight edit of the standouts. Every phone in this first look earns the second glance.</p>
-            <button className="explore-button">Explore catalogue →</button>
+            <Link to="/shop" className="explore-button">Explore catalogue →</Link>
         </div>
         <div className="products-grid">
             {products.map((product, index) =>(
-                <div key={index} className="product-card">
-                    <div className="card-header">
-                        <span className="card-category">{product.category}</span>
-                        <div className="card-icons">
-                            <span className="icon">♥</span>
-                            <span className="icon">FILM</span>
-                            <span className="icon">→</span>
+                <Link key={index} to={`/product/${product.id}`} className="product-card-link">
+                    <div className="product-card">
+                        <div className="card-header">
+                            <span className="card-category">{product.category}</span>
+                            <div className="card-icons">
+                                <span className="icon">♥</span>
+                                <span className="icon">FILM</span>
+                                <span className="icon">→</span>
+                            </div>
+                        </div>
+                        <div className="card-image" style={{ background: product.color }}>
+                            <div className="phone-mockup"></div>
+                        </div>
+                        <div className="card-content">
+                            <h3 className="card-name">{product.name}</h3>
+                            <p className="card-description">{product.description}</p>
+                            <div className="card-rating">
+                                <span className="star">★</span>
+                                <span className="rating-value">{product.rating}</span>
+                                <span className="reviews">{product.reviews}</span>
+                            </div>
+                            <div className="card-footer">
+                                <span className="card-price">{product.price} / from</span>
+                                <button className="add-to-bag" onClick={(e) => { e.preventDefault(); handleAddToBag(product); }}>Add to bag +</button>
+                            </div>
                         </div>
                     </div>
-                    <div className="card-image" style={{ background: product.color }}>
-                        <div className="phone-mockup"></div>
-                    </div>
-                    <div className="card-content">
-                        <h3 className="card-name">{product.name}</h3>
-                        <p className="card-description">{product.description}</p>
-                        <div className="card-rating">
-                            <span className="star">★</span>
-                            <span className="rating-value">{product.rating}</span>
-                            <span className="reviews">{product.reviews}</span>
-                        </div>
-                        <div className="card-footer">
-                            <span className="card-price">{product.price} / from</span>
-                            <button className="add-to-bag" onClick={() => handleAddToBag(product)}>Add to bag +</button>
-                        </div>
-                    </div>
-                </div>
+                </Link>
             ))}
         </div>
     </div>

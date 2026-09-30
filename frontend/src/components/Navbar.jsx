@@ -7,11 +7,13 @@ const Navbar = () => {
     <>
       <div className="navbar">
         <div className="navbar-brand">
-          <div className="logo">OVERHYPED.</div>
-          <div className="tagline">Technology should have a pulse. Ours is set to loud.</div>
+          <Link to="/" className="logo-link">
+            <div className="logo">OVERHYPED.</div>
+            <div className="tagline">Technology should have a pulse. Ours is set to loud.</div>
+          </Link>
         </div>
         <div className="navbar-links">
-          <Link to={"/"}>Shop</Link>
+          <Link to={"/shop"}>Shop</Link>
           <Link to={"/"}>Our point of view</Link>
           <Link to={"/"} className="support-link">Support</Link>
           <Link to={"/"}>The people at OverHyped</Link>

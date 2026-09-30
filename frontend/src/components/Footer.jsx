@@ -1,21 +1,24 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <div className="footer-logo">OVERHYPED.</div>
-          <div className="footer-tagline">Standout tech for people with somewhere to be and something to say.</div>
+          <Link to="/" className="footer-logo-link">
+            <div className="footer-logo">OVERHYPED.</div>
+            <div className="footer-tagline">Standout tech for people with somewhere to be and something to say.</div>
+          </Link>
         </div>
 
         <div className="footer-nav">
           <div className="footer-column">
             <h4 className="footer-heading">Shop</h4>
             <ul className="footer-links">
-              <li><a href="/">Shop phones</a></li>
-              <li><a href="/accessories">Accessories</a></li>
+              <li><Link to="/shop">Shop phones</Link></li>
+              <li><Link to="/accessories">Accessories</Link></li>
             </ul>
           </div>
 
