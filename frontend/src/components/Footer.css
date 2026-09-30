@@ -19,15 +19,16 @@
 }
 
 .footer-logo {
-  font-size: 32px;
-  font-weight: 900;
+  font-size: 50px;
+  font-weight: 1000;
+  text-decoration: underline;
   color: white;
   margin-bottom: 15px;
   letter-spacing: -1px;
 }
 
 .footer-tagline {
-  font-size: 16px;
+  font-size: 20px;
   color: #888;
   line-height: 1.5;
 }
