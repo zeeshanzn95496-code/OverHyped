@@ -46,6 +46,17 @@ const TopProducts = () => {
             price: '$1,299',
             color: '#9b59b6',
             image: 'purple'
+        },
+        {
+            id: 5,
+            name: 'Triple Fold',
+            category: 'PHONE',
+            description: 'Three screens. Infinite possibilities.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$1,799',
+            color: '#00d4aa',
+            image: 'teal'
         }
     ]
 

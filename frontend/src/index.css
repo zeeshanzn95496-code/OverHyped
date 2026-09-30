@@ -356,7 +356,7 @@ html, body {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
@@ -529,6 +529,10 @@ html, body {
   color: #666;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.shop-page .products-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .logo-link {
@@ -766,6 +770,10 @@ html, body {
     gap: 20px;
   }
 
+  .shop-page .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -826,6 +834,10 @@ html, body {
   .products-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .shop-page .products-grid {
+    grid-template-columns: 1fr;
   }
 
   .testimonials-section {
@@ -912,6 +924,10 @@ html, body {
 
   .shop-subtitle {
     font-size: 14px;
+  }
+
+  .shop-page .products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
