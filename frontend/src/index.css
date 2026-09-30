@@ -773,6 +773,10 @@ html, body {
   .email-title {
     font-size: 48px;
   }
+
+  .shop-title {
+    font-size: 48px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -888,6 +892,26 @@ html, body {
 
   .email-subtitle {
     font-size: 16px;
+  }
+
+  .shop-page {
+    padding: 100px 30px;
+  }
+
+  .shop-title {
+    font-size: 40px;
+  }
+
+  .shop-subtitle {
+    font-size: 16px;
+  }
+
+  .shop-title {
+    font-size: 32px;
+  }
+
+  .shop-subtitle {
+    font-size: 14px;
   }
 }
 
