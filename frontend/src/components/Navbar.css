@@ -24,6 +24,12 @@
   letter-spacing: -1px;
   margin-bottom: 4px;
 }
+.logo:hover{
+  color: #EB3855;
+  z-index: 1.5;
+  opacity: 80%;
+  background-color: #1a1a1a;
+}
 
 .tagline {
   font-size: 11px;
