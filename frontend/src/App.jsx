@@ -8,6 +8,8 @@ import Shop from "./pages/Shop"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
+import About from './pages/About';
+
 function App() {
 
 
@@ -21,6 +23,9 @@ function App() {
           <Route path="/accessories" element={<Accesories />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<Error />} />
+         
+      <Route path="/about-us" element={<About />} />
+    
         </Routes>
         <Footer />
       </div>
@@ -30,3 +35,6 @@ function App() {
 }
 
 export default App
+
+
+
