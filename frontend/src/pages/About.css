@@ -7,5 +7,6 @@
 }
 
 .under-construction h1 {
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-size:60px;
+  color: navy;
 }
