@@ -49,6 +49,8 @@
 
 .navbar-links a:hover {
   color: #EB3855;
+  font-size: 20px;
+  z-index: 1;
 }
 
 .support-link {
