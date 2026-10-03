@@ -23,8 +23,7 @@ function App() {
           <Route path="/accessories" element={<Accesories />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<Error />} />
-         
-      <Route path="/about-us" element={<About />} />
+          <Route path="/about-us" element={<About />} />
     
         </Routes>
         <Footer />
