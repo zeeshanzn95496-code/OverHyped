@@ -18,7 +18,7 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 900;
   color: #1a1a1a;
   letter-spacing: -1px;
@@ -26,7 +26,7 @@
 }
 .logo:hover{
   color: #EB3855;
-  z-index: 1.5;
+  z-index: 2;
   opacity: 80%;
   background-color: #1a1a1a;
 }
@@ -37,6 +37,12 @@
   font-weight: 400;
   max-width: 300px;
   line-height: 1.3;
+  opacity: 50%;
+}
+.tagline:hover{
+  opacity: 100%;
+  color: #EB3855;
+  text-decoration: underline;
 }
 
 .navbar-links {
