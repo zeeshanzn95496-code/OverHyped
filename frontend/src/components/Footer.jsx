@@ -43,9 +43,9 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p className="copyright">© 2024 Overhyped Phones, Inc.</p>
+          <p className="copyright">© 2026 Overhyped Phones, Inc.</p>
           <a href="#" className="footer-link">Made for the second look.</a>
-          <p className="location">New York. London. Everywhere.</p>
+          <p className="location">INDIA USA EVERYWHERE</p>
           <button className="build-button">Build for free</button>
         </div>
       </div>
