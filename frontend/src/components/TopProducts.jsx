@@ -57,7 +57,18 @@ const TopProducts = () => {
             price: '$1,799',
             color: '#00d4aa',
             image: 'teal'
-        }
+        },
+          {
+            id: 6,
+            name: 'quadra',
+            category: 'PHONE',
+            description: '4 screens ',
+            rating: '5.10',
+            reviews: 'owner reviews',
+            price: '$1500',
+            color: '#666',
+            image: 'img'
+        },
     ]
 
     const handleAddToBag = (product) => {
