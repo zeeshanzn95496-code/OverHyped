@@ -148,19 +148,20 @@ html, body {
 }
 
 .phone.halo-one {
-  transform: rotate(-15deg) translateX(-50px);
+ background-image: url("./pages/halo-phone.jpeg");
 }
 
-.phone.halo-ultra {
-  transform: rotate(15deg) translateX(50px);
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+.phone-body:hover{
+  z-index: 1.5;
+
 }
 
 .phone-body {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  position: relative;
+  position: absolute;
+
 }
 
 .hero-details {
