@@ -425,6 +425,8 @@ html, body {
   border-radius: 20px;
   border: 2px solid rgba(255,255,255,0.3);
   position: relative;
+  background-image: url('/halo-phone.jpeg');
+  background-size: cover;
 }
 
 .card-content {
@@ -501,42 +503,6 @@ html, body {
 }
 
 .product-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Shop Page */
-.shop-page {
-  padding: 120px 60px 60px;
-  background-color: #F4EFE6;
-  min-height: 100vh;
-}
-
-.shop-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.shop-title {
-  font-size: 64px;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-  letter-spacing: -2px;
-}
-
-.shop-subtitle {
-  font-size: 20px;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.shop-page .products-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.logo-link {
   text-decoration: none;
   color: inherit;
 }
@@ -771,19 +737,11 @@ html, body {
     gap: 20px;
   }
 
-  .shop-page .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .email-title {
-    font-size: 48px;
-  }
-
-  .shop-title {
     font-size: 48px;
   }
 }
@@ -835,10 +793,6 @@ html, body {
   .products-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .shop-page .products-grid {
-    grid-template-columns: 1fr;
   }
 
   .testimonials-section {
@@ -905,30 +859,6 @@ html, body {
 
   .email-subtitle {
     font-size: 16px;
-  }
-
-  .shop-page {
-    padding: 100px 30px;
-  }
-
-  .shop-title {
-    font-size: 40px;
-  }
-
-  .shop-subtitle {
-    font-size: 16px;
-  }
-
-  .shop-title {
-    font-size: 32px;
-  }
-
-  .shop-subtitle {
-    font-size: 14px;
-  }
-
-  .shop-page .products-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
