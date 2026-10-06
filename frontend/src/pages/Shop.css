@@ -1,5 +1,9 @@
 /* Shop Page Styles */
 
+.highlight {
+  color: #EB3855;
+}
+
 .shop-page {
   padding: 120px 60px 60px;
   background-color: #F4EFE6;
@@ -17,10 +21,6 @@
   color: #1a1a1a;
   margin-bottom: 20px;
   letter-spacing: -2px;
-}
-
-.highlight {
-  color: #EB3855;
 }
 
 .shop-subtitle {
