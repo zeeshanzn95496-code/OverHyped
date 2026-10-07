@@ -171,7 +171,7 @@
   border-radius: 20px;
   border: 2px solid rgba(255,255,255,0.3);
   position: relative;
-  background-image: url('/halo-phone.jpeg');
+  background-image: url('/frontend/src/pages/');
   background-size: cover;
 }
 

@@ -61,14 +61,47 @@ const Shop = () => {
         },
         {
             id: 6,
-            name: 'quadra',
+            name: 'Quadra',
             category: 'PHONE',
-            description: '4 screens ',
-            rating: '5.10',
+            description: '4 screens. Infinite power.',
+            rating: '5.0',
             reviews: 'owner reviews',
-            price: '$1500',
+            price: '$1,500',
             color: '#666',
             image: 'img'
+        },
+        {
+            id: 7,
+            name: 'Halo Charger',
+            category: 'ACCESSORY',
+            description: 'Fast charging. Zero wait.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$49',
+            color: '#f39c12',
+            image: 'charger'
+        },
+        {
+            id: 8,
+            name: 'Halo Powerbank',
+            category: 'ACCESSORY',
+            description: 'Power on the go. All day.',
+            rating: '4.6',
+            reviews: 'owner reviews',
+            price: '$79',
+            color: '#3498db',
+            image: 'powerbank'
+        },
+        {
+            id: 9,
+            name: 'Halo Earbuds',
+            category: 'ACCESSORY',
+            description: 'Sound that moves you.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$129',
+            color: '#e74c3c',
+            image: 'earbuds'
         },
     ]
 
