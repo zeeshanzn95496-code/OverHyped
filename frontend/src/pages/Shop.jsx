@@ -162,15 +162,15 @@ const Shop = () => {
         </div>
 
         {/* Accessories Section */}
-        <div className="shop-section">
+        <div className="shop-section accessories-section">
             <div className="shop-section-header">
                 <div className="section-number">02 / ACCESSORIES</div>
                 <h2 className="shop-section-title">Complete Your Setup</h2>
             </div>
-            <div className="products-grid">
+            <div className="products-grid accessories-grid">
                 {accessories.map((product, index) =>(
                     <Link key={index} to={`/product/${product.id}`} className="product-card-link">
-                        <div className="product-card">
+                        <div className="product-card accessory-card">
                             <div className="card-header">
                                 <span className="card-category">{product.category}</span>
                                 <div className="card-icons">
@@ -180,7 +180,7 @@ const Shop = () => {
                                 </div>
                             </div>
                             <div className="card-image" style={{ background: product.color }}>
-                                <div className="phone-mockup"></div>
+                                <div className="phone-mockup accessory-mockup"></div>
                             </div>
                             <div className="card-content">
                                 <h3 className="card-name">{product.name}</h3>

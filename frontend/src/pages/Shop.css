@@ -52,6 +52,28 @@
   letter-spacing: -2px;
 }
 
+/* Accessories Section Specific Styles */
+.accessories-section {
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 30px;
+}
+
+.accessories-grid {
+  /* Inherits from .products-grid, can be customized */
+}
+
+.accessory-card {
+  /* Inherits from .product-card, can be customized */
+}
+
+.accessory-mockup {
+  /* Inherits from .phone-mockup, can be customized */
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+}
+
 /* Products Grid */
 .products-grid {
   display: grid;
@@ -305,6 +327,10 @@
   .products-subtitle {
     font-size: 16px;
   }
+
+  .accessories-section {
+    padding: 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -336,6 +362,10 @@
   .products-subtitle {
     font-size: 16px;
   }
+
+  .accessories-section {
+    padding: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -357,5 +387,9 @@
 
   .shop-page .products-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .accessories-section {
+    padding: 20px;
   }
 }
