@@ -34,6 +34,24 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Shop Section */
+.shop-section {
+  margin-bottom: 80px;
+}
+
+.shop-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.shop-section-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
 /* Products Grid */
 .products-grid {
   display: grid;
@@ -171,7 +189,7 @@
   border-radius: 20px;
   border: 2px solid rgba(255,255,255,0.3);
   position: relative;
-  background-image: url('/frontend/src/pages/');
+  background-image: url('/halo-phone.jpeg');
   background-size: cover;
 }
 
@@ -263,6 +281,10 @@
     font-size: 48px;
   }
 
+  .shop-section-title {
+    font-size: 36px;
+  }
+
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -288,6 +310,10 @@
 @media (max-width: 768px) {
   .shop-page .products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .shop-section-title {
+    font-size: 32px;
   }
 
   .products-grid {
@@ -319,6 +345,10 @@
 
   .shop-title {
     font-size: 32px;
+  }
+
+  .shop-section-title {
+    font-size: 28px;
   }
 
   .shop-subtitle {
