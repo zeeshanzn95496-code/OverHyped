@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../pages/Shop.css'
 
 const TopProducts = () => {
+    const [cart, setCart] = useState([])
+    const [notification, setNotification] = useState(null)
+
+    // Load cart from localStorage on mount
+    useEffect(() => {
+        try {
+            const savedCart = JSON.parse(localStorage.getItem('cart') || '[]')
+            setCart(savedCart)
+        } catch (error) {
+            console.error('Error loading cart:', error)
+        }
+    }, [])
+
     const products = [
         {
             id: 1,
@@ -128,11 +141,29 @@ const TopProducts = () => {
     ]
 
     const handleAddToBag = (product) => {
-        console.log("Add to bag:", product.name)
+        const updatedCart = [...cart, product]
+        setCart(updatedCart)
+        setNotification(`${product.name} added to bag!`)
+
+        // Save to localStorage
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
+
+        // Dispatch event to update navbar
+        window.dispatchEvent(new Event('cartUpdated'))
+
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            setNotification(null)
+        }, 3000)
     }
 
   return (
     <>
+    {notification && (
+        <div className="notification">
+            {notification}
+        </div>
+    )}
     <div className="products-section">
         <div className="products-header">
             <div className="section-number">01 / THE FLAGSHIP EDIT</div>

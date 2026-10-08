@@ -4,6 +4,32 @@
   color: #EB3855;
 }
 
+/* Notification */
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  font-weight: 600;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .shop-page {
   padding: 120px 60px 60px;
   background-color: #F4EFE6;
@@ -106,7 +132,7 @@ color: black;
 }
 
 .section-number {
-  font-size: 14px;
+  font-size: 24px;
   letter-spacing: 2px;
   color: #888;
   margin-bottom: 20px;
@@ -337,6 +363,11 @@ color: black;
   .accessories-section {
     padding: 40px;
   }
+
+  .notification {
+    top: 90px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -397,5 +428,12 @@ color: black;
 
   .accessories-section {
     padding: 20px;
+  }
+
+  .notification {
+    top: 80px;
+    right: 20px;
+    left: 20px;
+    font-size: 14px;
   }
 }

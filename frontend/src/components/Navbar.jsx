@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Navbar.css"
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  const [cartCount, setCartCount] = useState(0)
+
+  useEffect(() => {
+    // Load cart from localStorage on mount
+    const loadCart = () => {
+      try {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+        setCartCount(cart.length)
+      } catch (error) {
+        console.error('Error loading cart:', error)
+        setCartCount(0)
+      }
+    }
+
+    // Initial load
+    loadCart()
+
+    // Listen for custom event
+    const handleCartUpdate = () => {
+      loadCart()
+    }
+
+    window.addEventListener('cartUpdated', handleCartUpdate)
+
+    return () => {
+      window.removeEventListener('cartUpdated', handleCartUpdate)
+    }
+  }, [])
+
   return (
     <>
       <div className="navbar">
@@ -22,7 +51,10 @@ const Navbar = () => {
         <div className="navbar-icons">
           <div className="icon">🔍</div>
           <div className="icon">★</div>
-          <div className="icon">🛒</div>
+          <div className="icon cart-icon">
+            🛒
+            {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+          </div>
         </div>
       </div>
     </>
