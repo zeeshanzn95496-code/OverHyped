@@ -61,11 +61,12 @@
 
 .accessories-grid {
   /* Inherits from .products-grid, can be customized */
+  
 }
 
 .accessory-card {
   /* Inherits from .product-card, can be customized */
-
+color: black;
 }
 
 .accessory-mockup {
@@ -73,6 +74,7 @@
   width: 120px;
   height: 120px;
   border-radius: 15px;
+  color: beige;
 }
 
 /* Products Grid */
@@ -98,6 +100,9 @@
 .products-header {
   text-align: center;
   margin-bottom: 60px;
+}
+.products-header:hover{
+  color: #EB3855;
 }
 
 .section-number {
