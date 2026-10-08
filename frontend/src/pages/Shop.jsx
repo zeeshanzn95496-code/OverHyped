@@ -114,6 +114,17 @@ const Shop = () => {
             color: '#9b59b6',
             image: 'holder'
         },
+        {
+            id: 11,
+            name: 'Halo Cable C to C',
+            category: 'ACCESSORY',
+            description: 'Fast data transfer. Durable build.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$19',
+            color: '#1abc9c',
+            image: 'cable'
+        },
     ]
 
     const handleAddToBag = (product) => {
