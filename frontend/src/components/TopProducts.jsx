@@ -103,6 +103,17 @@ const TopProducts = () => {
             color: '#e74c3c',
             image: 'earbuds'
         },
+        {
+            id: 10,
+            name: 'Halo Mobile Holder',
+            category: 'ACCESSORY',
+            description: 'Secure grip. Perfect view.',
+            rating: '4.5',
+            reviews: 'owner reviews',
+            price: '$29',
+            color: '#9b59b6',
+            image: 'holder'
+        },
     ]
 
     const handleAddToBag = (product) => {
