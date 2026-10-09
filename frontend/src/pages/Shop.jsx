@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Shop.css'
+import { useCart } from '../context/CartContext'
 
 const Shop = () => {
-    const [cart, setCart] = useState([])
-    const [notification, setNotification] = useState(null)
-
-    // Load cart from localStorage on mount
-    useEffect(() => {
-        try {
-            const savedCart = JSON.parse(localStorage.getItem('cart') || '[]')
-            setCart(savedCart)
-        } catch (error) {
-            console.error('Error loading cart:', error)
-        }
-    }, [])
+    const { addToCart } = useCart()
 
     const products = [
         {
@@ -151,33 +141,14 @@ const Shop = () => {
         },
     ]
 
-    const handleAddToBag = (product) => {
-        const updatedCart = [...cart, product]
-        setCart(updatedCart)
-        setNotification(`${product.name} added to bag!`)
-
-        // Save to localStorage
-        localStorage.setItem('cart', JSON.stringify(updatedCart))
-
-        // Dispatch event to update navbar
-        window.dispatchEvent(new Event('cartUpdated'))
-
-        // Hide notification after 3 seconds
-        setTimeout(() => {
-            setNotification(null)
-        }, 3000)
-    }
-
     const phones = products.filter(product => product.category === 'PHONE')
     const accessories = products.filter(product => product.category === 'ACCESSORY')
 
+    const handleAddToBag = (product) => {
+        addToCart(product)
+    }
+
   return (
-    <>
-    {notification && (
-        <div className="notification">
-            {notification}
-        </div>
-    )}
     <div className="shop-page">
         <div className="shop-header">
             <div className="section-number">CATALOGUE</div>
@@ -265,7 +236,6 @@ const Shop = () => {
             </div>
         </div>
     </div>
-    </>
   )
 }
 
