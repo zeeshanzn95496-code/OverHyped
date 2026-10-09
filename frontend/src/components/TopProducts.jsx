@@ -138,6 +138,17 @@ const TopProducts = () => {
             color: '#1abc9c',
             image: 'cable'
         },
+        {
+            id: 12,
+            name: 'Halo Powerbank 3000W',
+            category: 'ACCESSORY',
+            description: 'Massive power. Endless energy.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$149',
+            color: '#e67e22',
+            image: 'powerbank-3000'
+        },
     ]
 
     const handleAddToBag = (product) => {
