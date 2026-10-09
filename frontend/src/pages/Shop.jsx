@@ -139,6 +139,17 @@ const Shop = () => {
             color: '#e67e22',
             image: 'powerbank-3000'
         },
+        {
+            id: 13,
+            name: 'Halo Wired Headphone',
+            category: 'ACCESSORY',
+            description: 'Pure sound. No compromise.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$89',
+            color: '#34495e',
+            image: 'headphone'
+        },
     ]
 
     const phones = products.filter(product => product.category === 'PHONE')
