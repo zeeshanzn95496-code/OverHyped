@@ -150,6 +150,17 @@ const TopProducts = () => {
             color: '#34495e',
             image: 'headphone'
         },
+        {
+            id: 14,
+            name: 'Halo Wireless Headphone',
+            category: 'ACCESSORY',
+            description: 'Freedom to move. Studio quality.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$199',
+            color: '#16a085',
+            image: 'wireless-headphone'
+        },
     ]
 
     const handleAddToBag = (product) => {
