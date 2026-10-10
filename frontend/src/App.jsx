@@ -8,6 +8,7 @@ import Shop from "./pages/Shop"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Cart from "./pages/Cart"
+import Favorites from "./pages/Favorites"
 
 import About from './pages/About';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/accessories" element={<Accesories />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="*" element={<Error />} />
           <Route path="/about-us" element={<About />} />
 

@@ -86,6 +86,27 @@
   transform: scale(1.2);
 }
 
+.favorite-icon {
+  position: relative;
+}
+
+.favorite-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #FFD700;
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: popIn 0.3s ease-out;
+}
+
 .cart-icon {
   position: relative;
 }

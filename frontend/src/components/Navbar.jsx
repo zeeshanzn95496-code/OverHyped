@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 import "./Navbar.css"
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { useFavorites } from '../context/FavoritesContext'
 
 const Navbar = () => {
   const { cartCount } = useCart()
+  const { favoritesCount } = useFavorites()
 
   return (
     <>
@@ -24,7 +26,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-icons">
           <div className="icon">🔍</div>
-          <div className="icon">★</div>
+          <Link to="/favorites" className="icon favorite-icon">
+            ★
+            {favoritesCount > 0 && <span className="favorite-count">{favoritesCount}</span>}
+          </Link>
           <Link to="/cart" className="icon cart-icon">
             🛒
             {cartCount > 0 && <span className="cart-count">{cartCount}</span>}

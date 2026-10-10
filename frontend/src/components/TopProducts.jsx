@@ -2,9 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../pages/Shop.css'
 import { useCart } from '../context/CartContext'
+import { useFavorites } from '../context/FavoritesContext'
 
 const TopProducts = () => {
-    const { addToCart } = useCart()
+    const { addToCart, notification: cartNotification } = useCart()
+    const { toggleFavorite, isFavorite, notification: favoriteNotification } = useFavorites()
+    const notification = cartNotification || favoriteNotification
 
     const products = [
         {
@@ -167,7 +170,19 @@ const TopProducts = () => {
         addToCart(product)
     }
 
+    const handleFavorite = (e, product) => {
+        e.preventDefault()
+        e.stopPropagation()
+        toggleFavorite(product)
+    }
+
   return (
+    <>
+    {notification && (
+        <div className="notification">
+          {notification}
+        </div>
+    )}
     <div className="products-section">
         <div className="products-header">
             <div className="section-number">01 / THE FLAGSHIP EDIT</div>
@@ -182,7 +197,12 @@ const TopProducts = () => {
                         <div className="card-header">
                             <span className="card-category">{product.category}</span>
                             <div className="card-icons">
-                                <span className="icon">♥</span>
+                                <span 
+                                    className={`icon favorite-btn ${isFavorite(product.id) ? 'active' : ''}`}
+                                    onClick={(e) => handleFavorite(e, product)}
+                                >
+                                    ★
+                                </span>
                                 <span className="icon">FILM</span>
                                 <span className="icon">→</span>
                             </div>
@@ -208,6 +228,7 @@ const TopProducts = () => {
             ))}
         </div>
     </div>
+    </>
   )
 }
 
