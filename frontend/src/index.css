@@ -86,6 +86,11 @@ html, body {
 .hero-button.primary:hover {
   background-color: #c92a45;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(235, 56, 85, 0.4);
+}
+
+.hero-button.primary:active {
+  transform: translateY(0);
 }
 
 .hero-button.secondary {
@@ -100,6 +105,12 @@ html, body {
 .hero-button.secondary:hover {
   background-color: white;
   color: #1a1a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.hero-button.secondary:active {
+  transform: translateY(0);
 }
 
 .play-icon {

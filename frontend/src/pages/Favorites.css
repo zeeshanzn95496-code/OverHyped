@@ -72,6 +72,16 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.favorite-item:hover .favorite-item-name {
+  color: #EB3855;
+  transition: color 0.3s ease;
+}
+
+.favorite-item:hover .favorite-item-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 .favorite-item-image {
   width: 100%;
   height: 200px;
@@ -162,6 +172,12 @@
 .remove-button:hover {
   background-color: #EB3855;
   color: white;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(235, 56, 85, 0.3);
+}
+
+.remove-button:active {
+  transform: scale(0.95);
 }
 
 .favorites-actions {
@@ -185,6 +201,12 @@
 .clear-button:hover {
   background-color: #f5f5f5;
   color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button:active {
+  transform: translateY(0);
 }
 
 /* Responsive Design */

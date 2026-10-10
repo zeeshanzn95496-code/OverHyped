@@ -72,11 +72,13 @@
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-links a:hover {
   color: #EB3855;
+  transform: translateX(5px);
 }
 
 .footer-bottom {
@@ -103,11 +105,13 @@
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-link:hover {
   color: #EB3855;
+  transform: translateX(5px);
 }
 
 .location {

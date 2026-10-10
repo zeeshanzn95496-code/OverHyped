@@ -23,12 +23,12 @@
   color: #1a1a1a;
   letter-spacing: -1px;
   margin-bottom: 4px;
+  transition: all 0.3s ease;
 }
-.logo:hover{
+
+.logo:hover {
   color: #EB3855;
-  z-index: 2;
-  opacity: 80%;
-  background-color: #1a1a1a;
+  transform: scale(1.05);
 }
 
 .tagline {
@@ -43,6 +43,8 @@
   opacity: 100%;
   color: #EB3855;
   text-decoration: underline;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
 }
 
 .navbar-links {
@@ -56,13 +58,15 @@
   color: #333;
   font-weight: 500;
   font-size: 14px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .navbar-links a:hover {
   color: #EB3855;
   font-size: 20px;
   z-index: 1;
+  transform: translateY(-2px);
 }
 
 .support-link {
