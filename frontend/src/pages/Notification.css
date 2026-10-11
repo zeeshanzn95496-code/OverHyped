@@ -1,14 +1,14 @@
 /* Notification Styles */
 .notification {
   position: fixed;
-  top: 80px;
+  top: 20px;
   right: 30px;
   background-color: #1a1a1a;
   color: white;
   padding: 16px 24px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 100;
   animation: slideIn 0.3s ease-out;
   font-weight: 600;
 }
@@ -27,14 +27,14 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .notification {
-    top: 70px;
+    top: 20px;
     right: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .notification {
-    top: 60px;
+    top: 20px;
     right: 20px;
     left: 20px;
     font-size: 14px;
