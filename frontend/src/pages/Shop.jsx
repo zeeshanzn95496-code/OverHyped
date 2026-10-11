@@ -230,7 +230,7 @@ const Shop = () => {
             description: 'Soft touch. No fingerprints.',
             rating: '4.5',
             reviews: 'owner reviews',
-            price: '$19',
+            price: '$4',
             color: '#34495e',
             image: 'matte-skin'
         },
@@ -241,7 +241,7 @@ const Shop = () => {
             description: 'Shiny finish. Premium look.',
             rating: '4.6',
             reviews: 'owner reviews',
-            price: '$22',
+            price: '$5',
             color: '#e74c3c',
             image: 'glossy-skin'
         },
@@ -252,7 +252,7 @@ const Shop = () => {
             description: 'Carbon texture. Professional.',
             rating: '4.8',
             reviews: 'owner reviews',
-            price: '$35',
+            price: '$5',
             color: '#2c3e50',
             image: 'carbon-skin'
         },
@@ -263,7 +263,7 @@ const Shop = () => {
             description: 'Natural wood. Elegant finish.',
             rating: '4.7',
             reviews: 'owner reviews',
-            price: '$28',
+            price: '$4',
             color: '#8b4513',
             image: 'wood-skin'
         },
@@ -274,7 +274,7 @@ const Shop = () => {
             description: 'Color blend. Eye-catching.',
             rating: '4.9',
             reviews: 'owner reviews',
-            price: '$25',
+            price: '$5',
             color: '#9b59b6',
             image: 'gradient-skin'
         },
