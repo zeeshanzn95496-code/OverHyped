@@ -12,14 +12,14 @@ html, body {
 }
 
 .main {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
   background-color: #1a1a2e;
-  padding: 120px 60px 60px;
+  padding: 100px 60px 60px;
   position: relative;
   overflow: hidden;
 }
@@ -542,7 +542,7 @@ html, body {
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 100px 30px 40px;
+    padding: 80px 30px 40px;
   }
 
   .hero-title {
@@ -796,7 +796,7 @@ html, body {
 
 @media (max-width: 768px) {
   .product-detail-section {
-    padding: 100px 30px 40px;
+    padding: 80px 30px 40px;
   }
 
   .product-detail-title {
