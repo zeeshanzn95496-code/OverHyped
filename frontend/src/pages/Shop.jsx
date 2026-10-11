@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Shop.css'
+import './Accessories.css'
+import './Notification.css'
 import { useCart } from '../context/CartContext'
 import { useFavorites } from '../context/FavoritesContext'
 
