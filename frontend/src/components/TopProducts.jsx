@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../pages/Shop.css'
 import '../pages/Accessories.css'
 import '../pages/Covers.css'
+import '../pages/Skins.css'
 import '../pages/Notification.css'
 import { useCart } from '../context/CartContext'
 import { useFavorites } from '../context/FavoritesContext'
@@ -221,6 +222,61 @@ const TopProducts = () => {
             price: '$59',
             color: '#e91e63',
             image: 'designer-case'
+        },
+        {
+            id: 20,
+            name: 'Halo Matte Skin',
+            category: 'SKIN',
+            description: 'Soft touch. No fingerprints.',
+            rating: '4.5',
+            reviews: 'owner reviews',
+            price: '$19',
+            color: '#34495e',
+            image: 'matte-skin'
+        },
+        {
+            id: 21,
+            name: 'Halo Glossy Skin',
+            category: 'SKIN',
+            description: 'Shiny finish. Premium look.',
+            rating: '4.6',
+            reviews: 'owner reviews',
+            price: '$22',
+            color: '#e74c3c',
+            image: 'glossy-skin'
+        },
+        {
+            id: 22,
+            name: 'Halo Carbon Fiber Skin',
+            category: 'SKIN',
+            description: 'Carbon texture. Professional.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$35',
+            color: '#2c3e50',
+            image: 'carbon-skin'
+        },
+        {
+            id: 23,
+            name: 'Halo Wood Grain Skin',
+            category: 'SKIN',
+            description: 'Natural wood. Elegant finish.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$28',
+            color: '#8b4513',
+            image: 'wood-skin'
+        },
+        {
+            id: 24,
+            name: 'Halo Gradient Skin',
+            category: 'SKIN',
+            description: 'Color blend. Eye-catching.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$25',
+            color: '#9b59b6',
+            image: 'gradient-skin'
         },
     ]
 

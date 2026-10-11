@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './Shop.css'
 import './Accessories.css'
 import './Covers.css'
+import './Skins.css'
 import './Notification.css'
 import { useCart } from '../context/CartContext'
 import { useFavorites } from '../context/FavoritesContext'
@@ -222,11 +223,67 @@ const Shop = () => {
             color: '#e91e63',
             image: 'designer-case'
         },
+        {
+            id: 20,
+            name: 'Halo Matte Skin',
+            category: 'SKIN',
+            description: 'Soft touch. No fingerprints.',
+            rating: '4.5',
+            reviews: 'owner reviews',
+            price: '$19',
+            color: '#34495e',
+            image: 'matte-skin'
+        },
+        {
+            id: 21,
+            name: 'Halo Glossy Skin',
+            category: 'SKIN',
+            description: 'Shiny finish. Premium look.',
+            rating: '4.6',
+            reviews: 'owner reviews',
+            price: '$22',
+            color: '#e74c3c',
+            image: 'glossy-skin'
+        },
+        {
+            id: 22,
+            name: 'Halo Carbon Fiber Skin',
+            category: 'SKIN',
+            description: 'Carbon texture. Professional.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$35',
+            color: '#2c3e50',
+            image: 'carbon-skin'
+        },
+        {
+            id: 23,
+            name: 'Halo Wood Grain Skin',
+            category: 'SKIN',
+            description: 'Natural wood. Elegant finish.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$28',
+            color: '#8b4513',
+            image: 'wood-skin'
+        },
+        {
+            id: 24,
+            name: 'Halo Gradient Skin',
+            category: 'SKIN',
+            description: 'Color blend. Eye-catching.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$25',
+            color: '#9b59b6',
+            image: 'gradient-skin'
+        },
     ]
 
     const phones = products.filter(product => product.category === 'PHONE')
     const accessories = products.filter(product => product.category === 'ACCESSORY')
     const covers = products.filter(product => product.category === 'COVER')
+    const skins = products.filter(product => product.category === 'SKIN')
 
     const handleAddToBag = (product) => {
         addToCart(product)
@@ -367,6 +424,51 @@ const Shop = () => {
                             </div>
                             <div className="card-image" style={{ background: product.color }}>
                                 <div className="phone-mockup cover-mockup"></div>
+                            </div>
+                            <div className="card-content">
+                                <h3 className="card-name">{product.name}</h3>
+                                <p className="card-description">{product.description}</p>
+                                <div className="card-rating">
+                                    <span className="star">★</span>
+                                    <span className="rating-value">{product.rating}</span>
+                                    <span className="reviews">{product.reviews}</span>
+                                </div>
+                                <div className="card-footer">
+                                    <span className="card-price">{product.price} / from</span>
+                                    <button className="add-to-bag" onClick={(e) => { e.preventDefault(); handleAddToBag(product); }}>Add to bag +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </div>
+
+        {/* Mobile Skins Section */}
+        <div className="shop-section skins-section">
+            <div className="shop-section-header">
+                <div className="section-number">04 / MOBILE SKINS</div>
+                <h2 className="shop-section-title">Customize Your Look</h2>
+            </div>
+            <div className="products-grid skins-grid">
+                {skins.map((product, index) =>(
+                    <Link key={index} to={`/product/${product.id}`} className="product-card-link">
+                        <div className="product-card skin-card">
+                            <div className="card-header">
+                                <span className="card-category">{product.category}</span>
+                                <div className="card-icons">
+                                    <span
+                                        className={`icon favorite-btn ${isFavorite(product.id) ? 'active' : ''}`}
+                                        onClick={(e) => handleFavorite(e, product)}
+                                    >
+                                        ★
+                                    </span>
+                                    <span className="icon">FILM</span>
+                                    <span className="icon">→</span>
+                                </div>
+                            </div>
+                            <div className="card-image" style={{ background: product.color }}>
+                                <div className="phone-mockup skin-mockup"></div>
                             </div>
                             <div className="card-content">
                                 <h3 className="card-name">{product.name}</h3>
