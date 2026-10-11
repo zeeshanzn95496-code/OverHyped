@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Shop.css'
 import './Accessories.css'
+import './Covers.css'
 import './Notification.css'
 import { useCart } from '../context/CartContext'
 import { useFavorites } from '../context/FavoritesContext'
@@ -166,10 +167,66 @@ const Shop = () => {
             color: '#16a085',
             image: 'wireless-headphone'
         },
+        {
+            id: 15,
+            name: 'Halo Clear Case',
+            category: 'COVER',
+            description: 'Crystal clear. Maximum protection.',
+            rating: '4.6',
+            reviews: 'owner reviews',
+            price: '$29',
+            color: '#ecf0f1',
+            image: 'clear-case'
+        },
+        {
+            id: 16,
+            name: 'Halo Leather Case',
+            category: 'COVER',
+            description: 'Premium leather. Sleek design.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$49',
+            color: '#8e44ad',
+            image: 'leather-case'
+        },
+        {
+            id: 17,
+            name: 'Halo Rugged Case',
+            category: 'COVER',
+            description: 'Military grade. Drop protection.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$39',
+            color: '#2c3e50',
+            image: 'rugged-case'
+        },
+        {
+            id: 18,
+            name: 'Halo Slim Case',
+            category: 'COVER',
+            description: 'Ultra thin. Feather light.',
+            rating: '4.5',
+            reviews: 'owner reviews',
+            price: '$24',
+            color: '#bdc3c7',
+            image: 'slim-case'
+        },
+        {
+            id: 19,
+            name: 'Halo Designer Case',
+            category: 'COVER',
+            description: 'Artistic. Unique patterns.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$59',
+            color: '#e91e63',
+            image: 'designer-case'
+        },
     ]
 
     const phones = products.filter(product => product.category === 'PHONE')
     const accessories = products.filter(product => product.category === 'ACCESSORY')
+    const covers = products.filter(product => product.category === 'COVER')
 
     const handleAddToBag = (product) => {
         addToCart(product)
@@ -253,7 +310,7 @@ const Shop = () => {
                             <div className="card-header">
                                 <span className="card-category">{product.category}</span>
                                 <div className="card-icons">
-                                    <span 
+                                    <span
                                         className={`icon favorite-btn ${isFavorite(product.id) ? 'active' : ''}`}
                                         onClick={(e) => handleFavorite(e, product)}
                                     >
@@ -265,6 +322,51 @@ const Shop = () => {
                             </div>
                             <div className="card-image" style={{ background: product.color }}>
                                 <div className="phone-mockup accessory-mockup"></div>
+                            </div>
+                            <div className="card-content">
+                                <h3 className="card-name">{product.name}</h3>
+                                <p className="card-description">{product.description}</p>
+                                <div className="card-rating">
+                                    <span className="star">★</span>
+                                    <span className="rating-value">{product.rating}</span>
+                                    <span className="reviews">{product.reviews}</span>
+                                </div>
+                                <div className="card-footer">
+                                    <span className="card-price">{product.price} / from</span>
+                                    <button className="add-to-bag" onClick={(e) => { e.preventDefault(); handleAddToBag(product); }}>Add to bag +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </div>
+
+        {/* Mobile Covers Section */}
+        <div className="shop-section covers-section">
+            <div className="shop-section-header">
+                <div className="section-number">03 / MOBILE COVERS</div>
+                <h2 className="shop-section-title">Protect Your Device</h2>
+            </div>
+            <div className="products-grid covers-grid">
+                {covers.map((product, index) =>(
+                    <Link key={index} to={`/product/${product.id}`} className="product-card-link">
+                        <div className="product-card cover-card">
+                            <div className="card-header">
+                                <span className="card-category">{product.category}</span>
+                                <div className="card-icons">
+                                    <span
+                                        className={`icon favorite-btn ${isFavorite(product.id) ? 'active' : ''}`}
+                                        onClick={(e) => handleFavorite(e, product)}
+                                    >
+                                        ★
+                                    </span>
+                                    <span className="icon">FILM</span>
+                                    <span className="icon">→</span>
+                                </div>
+                            </div>
+                            <div className="card-image" style={{ background: product.color }}>
+                                <div className="phone-mockup cover-mockup"></div>
                             </div>
                             <div className="card-content">
                                 <h3 className="card-name">{product.name}</h3>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../pages/Shop.css'
 import '../pages/Accessories.css'
+import '../pages/Covers.css'
 import '../pages/Notification.css'
 import { useCart } from '../context/CartContext'
 import { useFavorites } from '../context/FavoritesContext'
@@ -165,6 +166,61 @@ const TopProducts = () => {
             price: '$199',
             color: '#16a085',
             image: 'wireless-headphone'
+        },
+        {
+            id: 15,
+            name: 'Halo Clear Case',
+            category: 'COVER',
+            description: 'Crystal clear. Maximum protection.',
+            rating: '4.6',
+            reviews: 'owner reviews',
+            price: '$29',
+            color: '#ecf0f1',
+            image: 'clear-case'
+        },
+        {
+            id: 16,
+            name: 'Halo Leather Case',
+            category: 'COVER',
+            description: 'Premium leather. Sleek design.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$49',
+            color: '#8e44ad',
+            image: 'leather-case'
+        },
+        {
+            id: 17,
+            name: 'Halo Rugged Case',
+            category: 'COVER',
+            description: 'Military grade. Drop protection.',
+            rating: '4.7',
+            reviews: 'owner reviews',
+            price: '$39',
+            color: '#2c3e50',
+            image: 'rugged-case'
+        },
+        {
+            id: 18,
+            name: 'Halo Slim Case',
+            category: 'COVER',
+            description: 'Ultra thin. Feather light.',
+            rating: '4.5',
+            reviews: 'owner reviews',
+            price: '$24',
+            color: '#bdc3c7',
+            image: 'slim-case'
+        },
+        {
+            id: 19,
+            name: 'Halo Designer Case',
+            category: 'COVER',
+            description: 'Artistic. Unique patterns.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$59',
+            color: '#e91e63',
+            image: 'designer-case'
         },
     ]
 
