@@ -148,6 +148,17 @@ const Shop = () => {
         },
         {
             id: 13,
+            name: 'Halo Powerbank 11000W Superfast',
+            category: 'ACCESSORY',
+            description: 'Ultra fast. Lightning charge.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$199',
+            color: '#ff6b6b',
+            image: 'powerbank-11000'
+        },
+        {
+            id: 14,
             name: 'Halo Wired Headphone',
             category: 'ACCESSORY',
             description: 'Pure sound. No compromise.',
@@ -158,7 +169,7 @@ const Shop = () => {
             image: 'headphone'
         },
         {
-            id: 14,
+            id: 15,
             name: 'Halo Wireless Headphone',
             category: 'ACCESSORY',
             description: 'Freedom to move. Studio quality.',
@@ -169,7 +180,7 @@ const Shop = () => {
             image: 'wireless-headphone'
         },
         {
-            id: 15,
+            id: 16,
             name: 'Halo Charger Cover Batman',
             category: 'ACCESSORY',
             description: 'Batman cartoon. Hero style.',
@@ -180,7 +191,7 @@ const Shop = () => {
             image: 'batman-charger-cover'
         },
         {
-            id: 16,
+            id: 17,
             name: 'Halo Clear Case',
             category: 'COVER',
             description: 'Crystal clear. Maximum protection.',
@@ -191,7 +202,7 @@ const Shop = () => {
             image: 'clear-case'
         },
         {
-            id: 16,
+            id: 18,
             name: 'Halo Leather Case',
             category: 'COVER',
             description: 'Premium leather. Sleek design.',
@@ -202,7 +213,7 @@ const Shop = () => {
             image: 'leather-case'
         },
         {
-            id: 17,
+            id: 19,
             name: 'Halo Rugged Case',
             category: 'COVER',
             description: 'Military grade. Drop protection.',
@@ -213,7 +224,7 @@ const Shop = () => {
             image: 'rugged-case'
         },
         {
-            id: 18,
+            id: 20,
             name: 'Halo Slim Case',
             category: 'COVER',
             description: 'Ultra thin. Feather light.',
@@ -224,7 +235,7 @@ const Shop = () => {
             image: 'slim-case'
         },
         {
-            id: 19,
+            id: 21,
             name: 'Halo Designer Case',
             category: 'COVER',
             description: 'Artistic. Unique patterns.',
@@ -235,7 +246,7 @@ const Shop = () => {
             image: 'designer-case'
         },
         {
-            id: 20,
+            id: 22,
             name: 'Halo Marble White Cover Limited',
             category: 'COVER',
             description: 'Elegant marble. Premium finish.',
@@ -246,7 +257,7 @@ const Shop = () => {
             image: 'marble-white'
         },
         {
-            id: 21,
+            id: 23,
             name: 'Halo Matte Skin',
             category: 'SKIN',
             description: 'Soft touch. No fingerprints.',
@@ -257,7 +268,7 @@ const Shop = () => {
             image: 'matte-skin'
         },
         {
-            id: 22,
+            id: 24,
             name: 'Halo Glossy Skin',
             category: 'SKIN',
             description: 'Shiny finish. Premium look.',
@@ -268,7 +279,7 @@ const Shop = () => {
             image: 'glossy-skin'
         },
         {
-            id: 23,
+            id: 25,
             name: 'Halo Carbon Fiber Skin',
             category: 'SKIN',
             description: 'Carbon texture. Professional.',
@@ -279,7 +290,7 @@ const Shop = () => {
             image: 'carbon-skin'
         },
         {
-            id: 24,
+            id: 26,
             name: 'Halo Wood Grain Skin',
             category: 'SKIN',
             description: 'Natural wood. Elegant finish.',
@@ -290,7 +301,7 @@ const Shop = () => {
             image: 'wood-skin'
         },
         {
-            id: 25,
+            id: 27,
             name: 'Halo Gradient Skin',
             category: 'SKIN',
             description: 'Color blend. Eye-catching.',
