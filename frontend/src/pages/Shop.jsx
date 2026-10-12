@@ -225,6 +225,17 @@ const Shop = () => {
         },
         {
             id: 20,
+            name: 'Halo Marble White Cover Limited',
+            category: 'COVER',
+            description: 'Elegant marble. Premium finish.',
+            rating: '5.0',
+            reviews: 'owner reviews',
+            price: '$69',
+            color: '#f5f5f5',
+            image: 'marble-white'
+        },
+        {
+            id: 21,
             name: 'Halo Matte Skin',
             category: 'SKIN',
             description: 'Soft touch. No fingerprints.',
@@ -235,7 +246,7 @@ const Shop = () => {
             image: 'matte-skin'
         },
         {
-            id: 21,
+            id: 22,
             name: 'Halo Glossy Skin',
             category: 'SKIN',
             description: 'Shiny finish. Premium look.',
@@ -246,7 +257,7 @@ const Shop = () => {
             image: 'glossy-skin'
         },
         {
-            id: 22,
+            id: 23,
             name: 'Halo Carbon Fiber Skin',
             category: 'SKIN',
             description: 'Carbon texture. Professional.',
@@ -257,7 +268,7 @@ const Shop = () => {
             image: 'carbon-skin'
         },
         {
-            id: 23,
+            id: 24,
             name: 'Halo Wood Grain Skin',
             category: 'SKIN',
             description: 'Natural wood. Elegant finish.',
@@ -268,7 +279,7 @@ const Shop = () => {
             image: 'wood-skin'
         },
         {
-            id: 24,
+            id: 25,
             name: 'Halo Gradient Skin',
             category: 'SKIN',
             description: 'Color blend. Eye-catching.',
