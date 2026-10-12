@@ -170,6 +170,17 @@ const Shop = () => {
         },
         {
             id: 15,
+            name: 'Halo Charger Cover Batman',
+            category: 'ACCESSORY',
+            description: 'Batman cartoon. Hero style.',
+            rating: '4.8',
+            reviews: 'owner reviews',
+            price: '$15',
+            color: '#1a1a1a',
+            image: 'batman-charger-cover'
+        },
+        {
+            id: 16,
             name: 'Halo Clear Case',
             category: 'COVER',
             description: 'Crystal clear. Maximum protection.',
