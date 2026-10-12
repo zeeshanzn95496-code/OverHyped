@@ -93,6 +93,17 @@ const Shop = () => {
         },
         {
             id: 8,
+            name: 'Halo 80W Charger',
+            category: 'ACCESSORY',
+            description: 'Super fast. Power delivery.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$79',
+            color: '#00d4aa',
+            image: 'charger-80w'
+        },
+        {
+            id: 9,
             name: 'Halo Powerbank',
             category: 'ACCESSORY',
             description: 'Power on the go. All day.',
@@ -103,7 +114,7 @@ const Shop = () => {
             image: 'powerbank'
         },
         {
-            id: 9,
+            id: 10,
             name: 'Halo Earbuds',
             category: 'ACCESSORY',
             description: 'Sound that moves you.',
@@ -114,7 +125,7 @@ const Shop = () => {
             image: 'earbuds'
         },
         {
-            id: 10,
+            id: 11,
             name: 'Halo Mobile Holder',
             category: 'ACCESSORY',
             description: 'Secure grip. Perfect view.',
@@ -125,7 +136,7 @@ const Shop = () => {
             image: 'holder'
         },
         {
-            id: 11,
+            id: 12,
             name: 'Halo Cable C to C',
             category: 'ACCESSORY',
             description: 'Fast data transfer. Durable build.',
@@ -136,7 +147,7 @@ const Shop = () => {
             image: 'cable'
         },
         {
-            id: 12,
+            id: 13,
             name: 'Halo Powerbank 3000W',
             category: 'ACCESSORY',
             description: 'Massive power. Endless energy.',
@@ -147,7 +158,7 @@ const Shop = () => {
             image: 'powerbank-3000'
         },
         {
-            id: 13,
+            id: 14,
             name: 'Halo Powerbank 11000W Superfast',
             category: 'ACCESSORY',
             description: 'Ultra fast. Lightning charge.',
@@ -158,7 +169,7 @@ const Shop = () => {
             image: 'powerbank-11000'
         },
         {
-            id: 14,
+            id: 15,
             name: 'Halo Wired Headphone',
             category: 'ACCESSORY',
             description: 'Pure sound. No compromise.',
@@ -169,7 +180,7 @@ const Shop = () => {
             image: 'headphone'
         },
         {
-            id: 15,
+            id: 16,
             name: 'Halo Wireless Headphone',
             category: 'ACCESSORY',
             description: 'Freedom to move. Studio quality.',
@@ -180,7 +191,7 @@ const Shop = () => {
             image: 'wireless-headphone'
         },
         {
-            id: 16,
+            id: 17,
             name: 'Halo Charger Cover Batman',
             category: 'ACCESSORY',
             description: 'Batman cartoon. Hero style.',
@@ -191,7 +202,7 @@ const Shop = () => {
             image: 'batman-charger-cover'
         },
         {
-            id: 17,
+            id: 18,
             name: 'Halo Clear Case',
             category: 'COVER',
             description: 'Crystal clear. Maximum protection.',
@@ -202,7 +213,7 @@ const Shop = () => {
             image: 'clear-case'
         },
         {
-            id: 18,
+            id: 19,
             name: 'Halo Leather Case',
             category: 'COVER',
             description: 'Premium leather. Sleek design.',
@@ -213,7 +224,7 @@ const Shop = () => {
             image: 'leather-case'
         },
         {
-            id: 19,
+            id: 20,
             name: 'Halo Rugged Case',
             category: 'COVER',
             description: 'Military grade. Drop protection.',
@@ -224,7 +235,7 @@ const Shop = () => {
             image: 'rugged-case'
         },
         {
-            id: 20,
+            id: 21,
             name: 'Halo Slim Case',
             category: 'COVER',
             description: 'Ultra thin. Feather light.',
@@ -235,7 +246,7 @@ const Shop = () => {
             image: 'slim-case'
         },
         {
-            id: 21,
+            id: 22,
             name: 'Halo Designer Case',
             category: 'COVER',
             description: 'Artistic. Unique patterns.',
@@ -246,7 +257,7 @@ const Shop = () => {
             image: 'designer-case'
         },
         {
-            id: 22,
+            id: 23,
             name: 'Halo Marble White Cover Limited',
             category: 'COVER',
             description: 'Elegant marble. Premium finish.',
@@ -257,7 +268,7 @@ const Shop = () => {
             image: 'marble-white'
         },
         {
-            id: 23,
+            id: 24,
             name: 'Halo Matte Skin',
             category: 'SKIN',
             description: 'Soft touch. No fingerprints.',
@@ -268,7 +279,7 @@ const Shop = () => {
             image: 'matte-skin'
         },
         {
-            id: 24,
+            id: 25,
             name: 'Halo Glossy Skin',
             category: 'SKIN',
             description: 'Shiny finish. Premium look.',
@@ -279,7 +290,7 @@ const Shop = () => {
             image: 'glossy-skin'
         },
         {
-            id: 25,
+            id: 26,
             name: 'Halo Carbon Fiber Skin',
             category: 'SKIN',
             description: 'Carbon texture. Professional.',
@@ -290,7 +301,7 @@ const Shop = () => {
             image: 'carbon-skin'
         },
         {
-            id: 26,
+            id: 27,
             name: 'Halo Wood Grain Skin',
             category: 'SKIN',
             description: 'Natural wood. Elegant finish.',
@@ -301,7 +312,7 @@ const Shop = () => {
             image: 'wood-skin'
         },
         {
-            id: 27,
+            id: 28,
             name: 'Halo Gradient Skin',
             category: 'SKIN',
             description: 'Color blend. Eye-catching.',
