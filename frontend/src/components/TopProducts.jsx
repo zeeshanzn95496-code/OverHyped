@@ -280,6 +280,17 @@ const TopProducts = () => {
         },
         {
             id: 25,
+            name: 'Halo Quadra Cover',
+            category: 'COVER',
+            description: 'Four screens. Ultimate protection.',
+            rating: '5.0',
+            reviews: 'owner reviews',
+            price: '$99',
+            color: '#666',
+            image: 'quadra-cover'
+        },
+        {
+            id: 26,
             name: 'Halo Matte Skin',
             category: 'SKIN',
             description: 'Soft touch. No fingerprints.',
