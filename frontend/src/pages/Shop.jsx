@@ -203,6 +203,17 @@ const Shop = () => {
         },
         {
             id: 18,
+            name: 'Halo Superman Charger Cover',
+            category: 'ACCESSORY',
+            description: 'Superman cartoon. Man of steel.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$18',
+            color: '#0056b3',
+            image: 'superman-charger-cover'
+        },
+        {
+            id: 19,
             name: 'Halo Clear Case',
             category: 'COVER',
             description: 'Crystal clear. Maximum protection.',
