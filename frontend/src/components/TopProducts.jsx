@@ -269,6 +269,17 @@ const TopProducts = () => {
         },
         {
             id: 24,
+            name: 'Halo Triple Fold Cover',
+            category: 'COVER',
+            description: 'Perfect fit. Three screens.',
+            rating: '4.9',
+            reviews: 'owner reviews',
+            price: '$89',
+            color: '#00d4aa',
+            image: 'triple-fold-cover'
+        },
+        {
+            id: 25,
             name: 'Halo Matte Skin',
             category: 'SKIN',
             description: 'Soft touch. No fingerprints.',
@@ -279,7 +290,7 @@ const TopProducts = () => {
             image: 'matte-skin'
         },
         {
-            id: 25,
+            id: 26,
             name: 'Halo Glossy Skin',
             category: 'SKIN',
             description: 'Shiny finish. Premium look.',
@@ -290,7 +301,7 @@ const TopProducts = () => {
             image: 'glossy-skin'
         },
         {
-            id: 26,
+            id: 27,
             name: 'Halo Carbon Fiber Skin',
             category: 'SKIN',
             description: 'Carbon texture. Professional.',
@@ -301,7 +312,7 @@ const TopProducts = () => {
             image: 'carbon-skin'
         },
         {
-            id: 27,
+            id: 28,
             name: 'Halo Wood Grain Skin',
             category: 'SKIN',
             description: 'Natural wood. Elegant finish.',
@@ -312,7 +323,7 @@ const TopProducts = () => {
             image: 'wood-skin'
         },
         {
-            id: 28,
+            id: 29,
             name: 'Halo Gradient Skin',
             category: 'SKIN',
             description: 'Color blend. Eye-catching.',
