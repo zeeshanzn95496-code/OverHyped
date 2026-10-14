@@ -1,53 +1,46 @@
 import React from 'react'
-import './Footer.css'
 import { Link } from 'react-router-dom'
+import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ onOpenSupport }) => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-brand">
-          <Link to="/" className="footer-logo-link">
-            <div className="footer-logo">OVERHYPED.</div>
-            <div className="footer-tagline">Standout tech for people with somewhere to be and something to say.</div>
+    <footer className="overhyped-footer">
+      <div className="footer-top-container">
+        {/* Brand statement */}
+        <div className="footer-brand-col">
+          <Link to="/" className="footer-logo">
+            OVERHYPED<span className="dot-coral">.</span>
           </Link>
+          <p className="footer-tagline">
+            Standout tech for people with somewhere to be and something to say.
+          </p>
         </div>
 
-        <div className="footer-nav">
-          <div className="footer-column">
-            <h4 className="footer-heading">Shop</h4>
-            <ul className="footer-links">
-              <li><Link to="/shop">Shop phones</Link></li>
-              <li><Link to="/accessories">Accessories</Link></li>
-            </ul>
+        {/* Navigation Columns */}
+        <div className="footer-links-grid">
+          <div className="footer-link-group">
+            <Link to="/shop" className="footer-nav-item">Shop phones</Link>
+            <Link to="/about-us" className="footer-nav-item">Our story</Link>
           </div>
-
-          <div className="footer-column">
-            <h4 className="footer-heading">Company</h4>
-            <ul className="footer-links">
-              <li><a href="#about">Our story</a></li>
-              <li><a href="#support">Support</a></li>
-              <li><a href="#returns">Returns</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-column">
-            <h4 className="footer-heading">Legal</h4>
-            <ul className="footer-links">
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
-            </ul>
+          <div className="footer-link-group">
+            <button
+              type="button"
+              className="footer-nav-item btn-link"
+              onClick={onOpenSupport}
+            >
+              Support
+            </button>
+            <Link to="/shop" className="footer-nav-item">Returns</Link>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="footer-bottom-content">
-          <p className="copyright">© 2026 Overhyped Phones, Inc.</p>
-          <a href="#" className="footer-link">Made for the second look.</a>
-          <p className="location">INDIA USA EVERYWHERE</p>
-          <button className="build-button">Build for free</button>
-        </div>
+      <div className="footer-bottom-divider"></div>
+
+      <div className="footer-bottom-container">
+        <span className="footer-copy">© 2024 OverHyped Phones, Inc.</span>
+        <span className="footer-slogan">Made for the second look.</span>
+        <span className="footer-locations">New York &bull; London &bull; Everywhere</span>
       </div>
     </footer>
   )

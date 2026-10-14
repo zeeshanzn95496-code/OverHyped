@@ -1,58 +1,83 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './Hero.css'
 
-const Hero = () => {
-  const handleExplore = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+const Hero = ({ onOpenFilm }) => {
+  const handleScrollToCatalogue = () => {
+    const el = document.getElementById('flagship-edit')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
-    <>
-    <div className="hero-section">
-      <div className="hero-content">
-        <div className="hero-left">
-          <div className="hero-location">NEW YORK / EST. 2024</div>
-          <h1 className="hero-title">
-            Make an <span className="highlight">entrance</span>
+    <section className="overhyped-hero" id="hero">
+      <div className="hero-container">
+        {/* Left Column: Hero Typography & Actions */}
+        <div className="hero-editorial">
+          <div className="hero-origin-tag">NEW YORK / EST. 2024</div>
+          <h1 className="hero-main-heading">
+            Make an <br />
+            <span className="heading-coral">entrance.</span>
           </h1>
-          <p className="hero-description">
+          <p className="hero-copy">
             Phones for people who think a little louder. Meet the device that refuses to be background noise.
           </p>
-          <div className="hero-buttons">
-            <button className="hero-button primary" onClick={handleExplore}>
-              Explore catalogue →
+
+          <div className="hero-cta-group">
+            <button
+              className="hero-btn-primary"
+              onClick={handleScrollToCatalogue}
+            >
+              Explore catalogue &rarr;
             </button>
-            <button className="hero-button secondary">
-              <span className="play-icon">▶</span> Watch the film
+            <button
+              className="hero-btn-film"
+              onClick={() => onOpenFilm && onOpenFilm("Halo One: The Film")}
+            >
+              <span className="film-play-icon">▶</span> Watch the film
             </button>
           </div>
         </div>
-        <div className="hero-right">
-          <div className="phone-display">
-            <div className="red-circle"></div>
-            <div className="phone halo-one">
-              <div className="phone-body"></div>
-            </div>
-            <div className="phone halo-ultra">
-              <div className="phone-body"></div>
-            </div>
+
+        {/* Right Column: Hero Stage Graphics */}
+        <div className="hero-visual-stage">
+          <div className="hero-backdrop-circle"></div>
+
+          {/* Floating Battery Badge */}
+          <div className="hero-pill-battery">
+            <span className="battery-label">BATTERY</span>
+            <span className="battery-val">2 d</span>
           </div>
-          <div className="hero-details">
-            <div className="detail-badge">
-              <span className="detail-label">CAMERA</span>
-              <span className="detail-value">20MP</span>
+
+          {/* Phone Render */}
+          <div className="hero-phone-showcase">
+            <img
+              src="/images/halo-hero.png"
+              alt="OverHyped Halo One in Coral"
+              className="hero-phone-image"
+            />
+          </div>
+
+          {/* Floating Camera Badge */}
+          <div className="hero-card-camera">
+            <div className="camera-spec-line">
+              <span className="camera-label">CAMERA</span>
+              <span className="camera-val">50 MP</span>
             </div>
-            <div className="detail-text">
-              Looks good from here ✨
+            <div className="camera-sparkle-text">
+              <span className="sparkle-icon">✦</span> Looks good from here
             </div>
-            <div className="battery-indicator">2 d</div>
           </div>
         </div>
       </div>
-      <div className="scroll-indicator">
-        SCROLL TO DISCOVER
+
+      {/* Bottom Scroll Indicator */}
+      <div className="hero-scroll-cue" onClick={handleScrollToCatalogue}>
+        <span>SCROLL TO DISCOVER</span>
+        <span className="arrow-down-right">&#8600;</span>
       </div>
-    </div>
-    </>
+    </section>
   )
 }
 
