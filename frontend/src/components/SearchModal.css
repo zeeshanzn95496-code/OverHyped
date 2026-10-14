@@ -1,0 +1,146 @@
+.search-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 12, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 3000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 24px;
+  animation: modalFadeIn 0.2s ease;
+}
+
+.search-modal-container {
+  background-color: var(--card-bg, #FFFFFF);
+  border: 1px solid rgba(22, 24, 40, 0.1);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-input-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(22, 24, 40, 0.08);
+  gap: 14px;
+}
+
+.search-icon-svg {
+  color: var(--coral-accent, #FA4465);
+}
+
+.search-input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #151728);
+  background: transparent;
+}
+
+.search-input-field::placeholder {
+  color: var(--text-muted, #7E8299);
+  font-weight: 400;
+}
+
+.search-close-btn {
+  background: rgba(22, 24, 40, 0.06);
+  border: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--text-muted, #7E8299);
+  cursor: pointer;
+}
+
+.search-results-section {
+  padding: 20px 24px 24px;
+}
+
+.search-results-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted, #7E8299);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.search-item-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.search-item-card:hover {
+  background-color: rgba(250, 68, 101, 0.06);
+  transform: translateX(4px);
+}
+
+.search-item-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: var(--bg-cream, #FAF7F2);
+  padding: 4px;
+}
+
+.search-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.search-item-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.search-item-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  color: var(--text-muted, #7E8299);
+}
+
+.search-item-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--coral-accent, #FA4465);
+}
+
+.search-empty {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: var(--text-muted, #7E8299);
+  text-align: center;
+  padding: 30px 0;
+}

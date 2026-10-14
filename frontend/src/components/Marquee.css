@@ -1,0 +1,46 @@
+.marquee-banner {
+  background-color: var(--midnight-navy, #141627);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 18px 0;
+  display: flex;
+  user-select: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-banner:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.marquee-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.marquee-dot {
+  font-size: 12px;
+  color: var(--coral-accent, #FA4465);
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

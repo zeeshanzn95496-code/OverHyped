@@ -1,6 +1,9 @@
-/* Global styles are now in index.css */
-.main {
+.main-app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1;
 }

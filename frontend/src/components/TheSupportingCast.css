@@ -1,0 +1,208 @@
+.supporting-cast-section {
+  background-color: var(--bg-cream, #FAF7F2);
+  background-image: 
+    linear-gradient(rgba(22, 24, 40, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 24, 40, 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+  padding: 90px 28px 100px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.supporting-cast-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* Header */
+.supporting-cast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.cast-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--coral-accent, #FA4465);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.cast-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: var(--text-primary, #151728);
+  margin: 0;
+}
+
+.highlight-teal {
+  color: var(--teal-accent, #30B5B8);
+}
+
+.cast-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cast-link:hover {
+  color: var(--teal-accent, #30B5B8);
+  transform: translateX(4px);
+}
+
+/* 3 Cards Grid */
+.cast-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.cast-card {
+  border-radius: 28px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cast-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Themes */
+.cast-card-cyan {
+  background-color: var(--teal-accent, #30B5B8);
+  color: #151728;
+}
+
+.cast-card-yellow {
+  background-color: var(--yellow-accent, #FDCB58);
+  color: #151728;
+}
+
+.cast-card-coral {
+  background-color: var(--coral-accent, #FA4465);
+  color: #FFFFFF;
+}
+
+/* Card Content Top */
+.cast-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cast-card-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+}
+
+.cast-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.cast-card-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Card Bottom Stage */
+.cast-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 24px;
+}
+
+.cast-graphic-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+}
+
+.cast-graphic-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.cast-card:hover .cast-graphic-img {
+  transform: scale(1.08);
+}
+
+/* Plus Buttons */
+.cast-add-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cast-add-btn.btn-dark {
+  background-color: #151728;
+  color: #FFFFFF;
+}
+
+.cast-add-btn.btn-dark:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+}
+
+.cast-add-btn.btn-light {
+  background-color: #FFFFFF;
+  color: #FA4465;
+}
+
+.cast-add-btn.btn-light:hover {
+  background-color: #FFF2F4;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cast-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

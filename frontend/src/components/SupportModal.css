@@ -1,0 +1,159 @@
+.support-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 12, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease;
+}
+
+.support-modal-card {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 560px;
+  padding: 36px 32px;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  color: #151728;
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.support-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(22, 24, 40, 0.1);
+  background: #FAF7F2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.support-modal-close:hover {
+  background: #FA4465;
+  color: #FFFFFF;
+}
+
+.support-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--coral-accent, #FA4465);
+  margin-bottom: 12px;
+}
+
+.support-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 0 0 10px 0;
+}
+
+.support-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: #5E6278;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+.support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.support-input, .support-textarea {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(22, 24, 40, 0.12);
+  background-color: #FAF7F2;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.support-input:focus, .support-textarea:focus {
+  border-color: #FA4465;
+  background-color: #FFFFFF;
+}
+
+.support-btn-submit {
+  background-color: #151728;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.support-btn-submit:hover {
+  background-color: #FA4465;
+}
+
+.support-sent-box {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+}
+
+.sent-check {
+  font-size: 36px;
+  color: #16A34A;
+  margin-bottom: 8px;
+}
+
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.store-item {
+  padding: 14px 18px;
+  background-color: #FAF7F2;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.store-city {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #151728;
+}
+
+.store-addr {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  color: #5E6278;
+}
+
+.store-hours {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #FA4465;
+}
