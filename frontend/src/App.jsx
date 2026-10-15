@@ -4,6 +4,8 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import Shop from './pages/Shop'
 import Accesories from './pages/Accesories'
+import Covers from './pages/Covers'
+import Skins from './pages/Skins'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import Favorites from './pages/Favorites'
@@ -69,6 +71,8 @@ function App() {
           />
           <Route path="/shop" element={<Shop onOpenFilm={handleOpenFilm} />} />
           <Route path="/accessories" element={<Accesories />} />
+          <Route path="/covers" element={<Covers />} />
+          <Route path="/skins" element={<Skins />} />
           <Route path="/product/:id" element={<ProductDetail onOpenFilm={handleOpenFilm} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favorites />} />

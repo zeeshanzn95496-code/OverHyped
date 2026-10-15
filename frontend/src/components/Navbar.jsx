@@ -48,6 +48,27 @@ const Navbar = ({ onOpenSearch, onOpenSupport }) => {
             Shop
           </Link>
           <Link
+            to="/accessories"
+            className="nav-link-item"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Accessories
+          </Link>
+          <Link
+            to="/covers"
+            className="nav-link-item"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Covers
+          </Link>
+          <Link
+            to="/skins"
+            className="nav-link-item"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Skins
+          </Link>
+          <Link
             to="/about-us"
             className="nav-link-item"
             onClick={() => handleScrollToSection('point-of-view')}

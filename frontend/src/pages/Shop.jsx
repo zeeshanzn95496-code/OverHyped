@@ -50,6 +50,28 @@ const fullCatalog = [
     theme: 'purple'
   },
   {
+    id: 5,
+    name: 'Triple Fold',
+    category: 'Phones',
+    description: 'Three screens. Infinite possibilities.',
+    rating: '4.9',
+    reviews: '2 owner reviews',
+    price: '$1,499',
+    image: '/images/foldline.png',
+    theme: 'teal'
+  },
+  {
+    id: 6,
+    name: 'Quadra',
+    category: 'Phones',
+    description: 'Four screens. Ultimate multitasking.',
+    rating: '5.0',
+    reviews: '1 owner review',
+    price: '$1,799',
+    image: '/images/foldline.png',
+    theme: 'dark'
+  },
+  {
     id: 7,
     name: 'Buds',
     category: 'Audio',
@@ -62,12 +84,12 @@ const fullCatalog = [
   },
   {
     id: 8,
-    name: 'Charge 60W',
+    name: 'Halo 80W Charger',
     category: 'Power',
-    description: 'Fast power brick with main-character energy',
-    rating: '4.8',
-    reviews: '8 owner reviews',
-    price: '$49',
+    description: 'Super fast. Power delivery.',
+    rating: '4.9',
+    reviews: '15 owner reviews',
+    price: '$79',
     image: '/images/acc-charge.png',
     theme: 'yellow'
   },
@@ -92,6 +114,72 @@ const fullCatalog = [
     price: '$89',
     image: '/images/acc-charge.png',
     theme: 'yellow'
+  },
+  {
+    id: 11,
+    name: 'Halo Powerbank 3000W',
+    category: 'Power',
+    description: 'Massive power. Endless energy.',
+    rating: '4.8',
+    reviews: '5 owner reviews',
+    price: '$149',
+    image: '/images/acc-charge.png',
+    theme: 'yellow'
+  },
+  {
+    id: 12,
+    name: 'Halo Powerbank 11000W Superfast',
+    category: 'Power',
+    description: 'Ultra fast. Lightning charge.',
+    rating: '4.9',
+    reviews: '8 owner reviews',
+    price: '$199',
+    image: '/images/acc-charge.png',
+    theme: 'coral'
+  },
+  {
+    id: 13,
+    name: 'Halo Wired Headphone',
+    category: 'Audio',
+    description: 'Pure sound. No compromise.',
+    rating: '4.7',
+    reviews: '10 owner reviews',
+    price: '$89',
+    image: '/images/acc-buds.png',
+    theme: 'dark'
+  },
+  {
+    id: 14,
+    name: 'Halo Wireless Headphone',
+    category: 'Audio',
+    description: 'Freedom to move. Studio quality.',
+    rating: '4.9',
+    reviews: '14 owner reviews',
+    price: '$199',
+    image: '/images/acc-buds.png',
+    theme: 'teal'
+  },
+  {
+    id: 15,
+    name: 'Halo Charger Cover Batman',
+    category: 'Protection',
+    description: 'Batman cartoon. Hero style.',
+    rating: '4.8',
+    reviews: '6 owner reviews',
+    price: '$15',
+    image: '/images/acc-shell.png',
+    theme: 'dark'
+  },
+  {
+    id: 16,
+    name: 'Halo Superman Charger Cover',
+    category: 'Protection',
+    description: 'Superman cartoon. Man of steel.',
+    rating: '4.9',
+    reviews: '4 owner reviews',
+    price: '$18',
+    image: '/images/acc-shell.png',
+    theme: 'coral'
   }
 ]
 
