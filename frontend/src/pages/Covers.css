@@ -156,7 +156,7 @@
 }
 
 .cover-button {
-  background-color: var(--text-primary, #151728);
+  background-color: #151728;
   color: #FFFFFF;
   border: none;
   font-family: 'Outfit', sans-serif;

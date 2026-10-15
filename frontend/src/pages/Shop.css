@@ -90,9 +90,9 @@
 }
 
 .shop-tab-btn.active {
-  background-color: var(--text-primary, #151728);
+  background-color: #151728;
   color: #FFFFFF;
-  border-color: var(--text-primary, #151728);
+  border-color: #151728;
 }
 
 .shop-tab-btn:hover:not(.active) {
@@ -262,7 +262,7 @@
 }
 
 .btn-shop-add {
-  background-color: var(--text-primary, #151728);
+  background-color: #151728;
   color: #FFFFFF;
   border: none;
   font-family: 'Outfit', sans-serif;
