@@ -34,8 +34,8 @@ const flagshipPhones = [
     tag: '03 / PHONE',
     name: 'Halo Ultra',
     description: 'For the overachievers',
-    rating: '4.7',
-    reviews: '3 owner reviews',
+    rating: '4.8',
+    reviews: '5 owner reviews',
     price: '$999',
     image: '/images/halo-ultra.png',
     theme: 'dark',
@@ -52,6 +52,30 @@ const flagshipPhones = [
     image: '/images/foldline.png',
     theme: 'light',
     colorName: 'Lavender Fold'
+  },
+  {
+    id: 5,
+    tag: '05 / PHONE',
+    name: 'Triple Fold',
+    description: 'Three screens. Infinite possibilities.',
+    rating: '4.9',
+    reviews: '2 owner reviews',
+    price: '$1,499',
+    image: '/images/foldline.png',
+    theme: 'light',
+    colorName: 'Teal Fusion'
+  },
+  {
+    id: 6,
+    tag: '06 / PHONE',
+    name: 'Quadra',
+    description: 'Four screens. Ultimate multitasking.',
+    rating: '5.0',
+    reviews: '1 owner review',
+    price: '$1,799',
+    image: '/images/foldline.png',
+    theme: 'dark',
+    colorName: 'Midnight Gray'
   }
 ]
 
