@@ -6,6 +6,7 @@ import Shop from './pages/Shop'
 import Accesories from './pages/Accesories'
 import Covers from './pages/Covers'
 import Skins from './pages/Skins'
+import BuildYourOwn from './pages/BuildYourOwn'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import Favorites from './pages/Favorites'
@@ -73,6 +74,7 @@ function App() {
           <Route path="/accessories" element={<Accesories />} />
           <Route path="/covers" element={<Covers />} />
           <Route path="/skins" element={<Skins />} />
+          <Route path="/build-your-own" element={<BuildYourOwn />} />
           <Route path="/product/:id" element={<ProductDetail onOpenFilm={handleOpenFilm} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favorites />} />

@@ -69,6 +69,13 @@ const Navbar = ({ onOpenSearch, onOpenSupport }) => {
             Skins
           </Link>
           <Link
+            to="/build-your-own"
+            className="nav-link-item"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Build Your Own
+          </Link>
+          <Link
             to="/about-us"
             className="nav-link-item"
             onClick={() => handleScrollToSection('point-of-view')}

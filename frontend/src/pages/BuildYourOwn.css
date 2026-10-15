@@ -1,0 +1,63 @@
+.build-your-own-page {
+  background-color: var(--bg-cream, #FAF7F2);
+  min-height: 100vh;
+  padding: 60px 28px 100px;
+  transition: background-color 0.3s ease;
+}
+
+.build-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.build-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.build-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--coral-accent, #FA4465);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.build-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 950;
+  letter-spacing: -1.5px;
+  color: var(--text-primary, #151728);
+  margin: 0 0 10px 0;
+}
+
+.build-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted, #5E6278);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.build-placeholder {
+  background-color: var(--card-light, #F5EFE6);
+  border-radius: 28px;
+  padding: 80px 40px;
+  text-align: center;
+  border: 2px dashed rgba(22, 24, 40, 0.1);
+}
+
+.placeholder-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.placeholder-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: var(--text-muted, #5E6278);
+  margin: 0;
+}
