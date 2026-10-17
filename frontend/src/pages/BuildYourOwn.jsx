@@ -87,6 +87,13 @@ const BuildYourOwn = () => {
     { size: '32GB', price: 300 }
   ]
 
+  const getMobilePriceWithRAM = () => {
+    if (!selectedMobile || !selectedRAM) return 0
+    const basePrice = parseInt(selectedMobile.price.replace(/[$,]/g, ''))
+    const ramPrice = ramOptions.find(r => r.size === selectedRAM)?.price || 0
+    return `$${basePrice + ramPrice}`
+  }
+
   return (
     <div className="build-your-own-page">
       {notification && (
@@ -99,121 +106,84 @@ const BuildYourOwn = () => {
       <div className="build-container">
         <div className="build-header">
           <span className="build-kicker">BUILD YOUR OWN</span>
-          <h1 className="build-title">Choose Your Base Device</h1>
-          <p className="build-subtitle">Select from our available mobile devices to start customizing your perfect setup.</p>
+          <h1 className="build-title">Customize Your Perfect Device</h1>
+          <p className="build-subtitle">Select a device and customize it with your preferred specifications.</p>
         </div>
 
-        <div className="build-grid">
-          {availableMobiles.map(mobile => {
-            const isDark = mobile.theme === 'dark'
-            const favorited = isFavorite(mobile.id)
-            const isSelected = selectedMobile?.id === mobile.id
-
-            return (
-              <div
-                key={mobile.id}
-                className={`build-card ${isDark ? 'card-dark' : 'card-light'} ${isSelected ? 'selected' : ''}`}
-                onClick={() => setSelectedMobile(mobile)}
-              >
-                <div className="build-card-top">
-                  <span className="build-card-cat">{mobile.category}</span>
+        <div className="build-content">
+          <div className="build-selection-panel">
+            <div className="mobile-selection">
+              <h3 className="selection-label">Select Device</h3>
+              <div className="mobile-buttons">
+                {availableMobiles.map(mobile => (
                   <button
-                    className={`build-card-fav ${favorited ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      toggleFavorite(mobile)
-                    }}
-                    aria-label="Wishlist toggle"
+                    key={mobile.id}
+                    className={`mobile-btn ${selectedMobile?.id === mobile.id ? 'active' : ''}`}
+                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null) }}
                   >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill={favorited ? "#FA4465" : "none"} stroke="#FA4465" strokeWidth="2.2">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                  </button>
-                </div>
-
-                <Link to={`/product/${mobile.id}`} className="build-img-link" onClick={(e) => e.stopPropagation()}>
-                  <img src={mobile.image} alt={mobile.name} className="build-item-image" />
-                </Link>
-
-                <div className="build-card-info">
-                  <h3 className="build-item-title">{mobile.name}</h3>
-                  <p className="build-item-desc">{mobile.description}</p>
-                  
-                  <div className="build-item-rating">
-                    <span className="star">★</span>
-                    <span className="rating-val">{mobile.rating}</span>
-                    <span className="dot">&bull;</span>
-                    <span className="revs">{mobile.reviews}</span>
-                  </div>
-
-                  <div className="build-card-bottom-row">
-                    <span className="build-item-price">{mobile.price}</span>
-                    <button
-                      className="btn-build-add"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        addToCart(mobile)
-                      }}
-                    >
-                      Add to bag +
-                    </button>
-                  </div>
-                </div>
-
-                {isSelected && (
-                  <div className="build-selected-badge">
-                    <span className="selected-check">✓</span>
-                    <span>Selected</span>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {selectedMobile && (
-          <>
-            <div className="build-customization-section">
-              <h2 className="customization-title">Customize Your {selectedMobile.name}</h2>
-              <p className="customization-subtitle">Select your preferred RAM configuration</p>
-              
-              <div className="ram-options">
-                {ramOptions.map((ram) => (
-                  <button
-                    key={ram.size}
-                    className={`ram-option ${selectedRAM === ram.size ? 'active' : ''}`}
-                    onClick={() => setSelectedRAM(ram.size)}
-                  >
-                    <span className="ram-size">{ram.size}</span>
-                    <span className="ram-price">+${ram.price}</span>
+                    {mobile.name}
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="build-actions">
-              <button className="btn-build-cancel" onClick={() => { setSelectedMobile(null); setSelectedRAM(null) }}>
-                Cancel Selection
-              </button>
-              <button 
-                className="btn-build-customize"
-                onClick={() => {
-                  if (selectedRAM) {
-                    const customMobile = {
-                      ...selectedMobile,
-                      name: `${selectedMobile.name} (${selectedRAM} RAM)`,
-                      customRAM: selectedRAM
-                    }
-                    addToCart(customMobile)
-                  }
-                }}
-                disabled={!selectedRAM}
-              >
-                {selectedRAM ? `Add ${selectedMobile.name} (${selectedRAM} RAM) to bag →` : 'Select RAM to continue'}
-              </button>
-            </div>
-          </>
-        )}
+            {selectedMobile && (
+              <div className="ram-selection">
+                <h3 className="selection-label">Select RAM</h3>
+                <div className="ram-buttons">
+                  {ramOptions.map((ram) => (
+                    <button
+                      key={ram.size}
+                      className={`ram-btn ${selectedRAM === ram.size ? 'active' : ''}`}
+                      onClick={() => setSelectedRAM(ram.size)}
+                    >
+                      {ram.size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="build-preview-panel">
+            {selectedMobile ? (
+              <div className="device-preview">
+                <img src={selectedMobile.image} alt={selectedMobile.name} className="preview-image" />
+                <div className="preview-info">
+                  <h3 className="preview-title">{selectedMobile.name}</h3>
+                  <p className="preview-desc">{selectedMobile.description}</p>
+                  {selectedRAM && (
+                    <div className="preview-specs">
+                      <span className="spec-item">RAM: {selectedRAM}</span>
+                      <span className="spec-item">Price: {getMobilePriceWithRAM()}</span>
+                    </div>
+                  )}
+                </div>
+                {selectedRAM && (
+                  <button
+                    className="btn-add-to-cart"
+                    onClick={() => {
+                      const customMobile = {
+                        ...selectedMobile,
+                        name: `${selectedMobile.name} (${selectedRAM} RAM)`,
+                        customRAM: selectedRAM,
+                        price: getMobilePriceWithRAM()
+                      }
+                      addToCart(customMobile)
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                )}
+              </div>
+            ) : (
+              <div className="preview-placeholder">
+                <div className="placeholder-icon">📱</div>
+                <p className="placeholder-text">Select a device to preview</p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   )
