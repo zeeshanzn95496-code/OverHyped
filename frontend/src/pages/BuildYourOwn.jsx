@@ -78,6 +78,14 @@ const BuildYourOwn = () => {
   const { toggleFavorite, isFavorite, notification: favNotification } = useFavorites()
   const notification = cartNotification || favNotification
   const [selectedMobile, setSelectedMobile] = useState(null)
+  const [selectedRAM, setSelectedRAM] = useState(null)
+
+  const ramOptions = [
+    { size: '8GB', price: 0 },
+    { size: '16GB', price: 100 },
+    { size: '24GB', price: 200 },
+    { size: '32GB', price: 300 }
+  ]
 
   return (
     <div className="build-your-own-page">
@@ -164,14 +172,47 @@ const BuildYourOwn = () => {
         </div>
 
         {selectedMobile && (
-          <div className="build-actions">
-            <button className="btn-build-cancel" onClick={() => setSelectedMobile(null)}>
-              Cancel Selection
-            </button>
-            <Link to={`/product/${selectedMobile.id}`} className="btn-build-customize">
-              Customize {selectedMobile.name} →
-            </Link>
-          </div>
+          <>
+            <div className="build-customization-section">
+              <h2 className="customization-title">Customize Your {selectedMobile.name}</h2>
+              <p className="customization-subtitle">Select your preferred RAM configuration</p>
+              
+              <div className="ram-options">
+                {ramOptions.map((ram) => (
+                  <button
+                    key={ram.size}
+                    className={`ram-option ${selectedRAM === ram.size ? 'active' : ''}`}
+                    onClick={() => setSelectedRAM(ram.size)}
+                  >
+                    <span className="ram-size">{ram.size}</span>
+                    <span className="ram-price">+${ram.price}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="build-actions">
+              <button className="btn-build-cancel" onClick={() => { setSelectedMobile(null); setSelectedRAM(null) }}>
+                Cancel Selection
+              </button>
+              <button 
+                className="btn-build-customize"
+                onClick={() => {
+                  if (selectedRAM) {
+                    const customMobile = {
+                      ...selectedMobile,
+                      name: `${selectedMobile.name} (${selectedRAM} RAM)`,
+                      customRAM: selectedRAM
+                    }
+                    addToCart(customMobile)
+                  }
+                }}
+                disabled={!selectedRAM}
+              >
+                {selectedRAM ? `Add ${selectedMobile.name} (${selectedRAM} RAM) to bag →` : 'Select RAM to continue'}
+              </button>
+            </div>
+          </>
         )}
       </div>
     </div>

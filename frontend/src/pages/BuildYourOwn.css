@@ -260,6 +260,87 @@
   font-weight: 900;
 }
 
+/* Customization Section */
+.build-customization-section {
+  background-color: var(--card-light, #F5EFE6);
+  border-radius: 28px;
+  padding: 40px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.customization-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--text-primary, #151728);
+  margin: 0 0 8px 0;
+}
+
+.customization-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted, #5E6278);
+  margin: 0 0 32px 0;
+}
+
+.ram-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ram-option {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 16px;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ram-option:hover {
+  border-color: var(--coral-accent, #FA4465);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ram-option.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+  color: #FFFFFF;
+}
+
+.ram-size {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--text-primary, #151728);
+}
+
+.ram-option.active .ram-size {
+  color: #FFFFFF;
+}
+
+.ram-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted, #5E6278);
+}
+
+.ram-option.active .ram-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Actions Section */
 .build-actions {
   display: flex;
@@ -302,10 +383,16 @@
   transition: all 0.2s ease;
 }
 
-.btn-build-customize:hover {
+.btn-build-customize:hover:not(:disabled) {
   background-color: #E63554;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(250, 68, 101, 0.3);
+}
+
+.btn-build-customize:disabled {
+  background-color: rgba(22, 24, 40, 0.2);
+  color: var(--text-muted, #5E6278);
+  cursor: not-allowed;
 }
 
 /* Toast Notification */
