@@ -131,6 +131,39 @@
   color: #FFFFFF;
 }
 
+/* Storage Buttons */
+.storage-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.storage-btn {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text-primary, #151728);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.storage-btn:hover {
+  border-color: var(--coral-accent, #FA4465);
+  background-color: rgba(250, 68, 101, 0.05);
+  transform: translateY(-2px);
+}
+
+.storage-btn.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+  color: #FFFFFF;
+}
+
 /* Preview Panel */
 .build-preview-panel {
   background-color: var(--card-light, #F5EFE6);
@@ -209,6 +242,14 @@
   background-color: var(--coral-accent, #FA4465);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(250, 68, 101, 0.3);
+}
+
+.btn-add-to-cart:disabled {
+  background-color: rgba(22, 24, 40, 0.2);
+  color: var(--text-muted, #5E6278);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Preview Placeholder */

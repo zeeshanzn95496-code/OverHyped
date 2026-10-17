@@ -79,6 +79,7 @@ const BuildYourOwn = () => {
   const notification = cartNotification || favNotification
   const [selectedMobile, setSelectedMobile] = useState(null)
   const [selectedRAM, setSelectedRAM] = useState(null)
+  const [selectedStorage, setSelectedStorage] = useState(null)
 
   const ramOptions = [
     { size: '8GB', price: 0 },
@@ -87,11 +88,19 @@ const BuildYourOwn = () => {
     { size: '32GB', price: 300 }
   ]
 
-  const getMobilePriceWithRAM = () => {
-    if (!selectedMobile || !selectedRAM) return 0
+  const storageOptions = [
+    { size: '780GB', price: 0 },
+    { size: '1TB', price: 150 },
+    { size: '2TB', price: 300 },
+    { size: '3TB', price: 450 }
+  ]
+
+  const getTotalPrice = () => {
+    if (!selectedMobile) return 0
     const basePrice = parseInt(selectedMobile.price.replace(/[$,]/g, ''))
     const ramPrice = ramOptions.find(r => r.size === selectedRAM)?.price || 0
-    return `$${basePrice + ramPrice}`
+    const storagePrice = storageOptions.find(s => s.size === selectedStorage)?.price || 0
+    return `$${basePrice + ramPrice + storagePrice}`
   }
 
   return (
@@ -119,7 +128,7 @@ const BuildYourOwn = () => {
                   <button
                     key={mobile.id}
                     className={`mobile-btn ${selectedMobile?.id === mobile.id ? 'active' : ''}`}
-                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null) }}
+                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null) }}
                   >
                     {mobile.name}
                   </button>
@@ -143,6 +152,23 @@ const BuildYourOwn = () => {
                 </div>
               </div>
             )}
+
+            {selectedMobile && (
+              <div className="storage-selection">
+                <h3 className="selection-label">Select Storage</h3>
+                <div className="storage-buttons">
+                  {storageOptions.map((storage) => (
+                    <button
+                      key={storage.size}
+                      className={`storage-btn ${selectedStorage === storage.size ? 'active' : ''}`}
+                      onClick={() => setSelectedStorage(storage.size)}
+                    >
+                      {storage.size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="build-preview-panel">
@@ -152,27 +178,33 @@ const BuildYourOwn = () => {
                 <div className="preview-info">
                   <h3 className="preview-title">{selectedMobile.name}</h3>
                   <p className="preview-desc">{selectedMobile.description}</p>
-                  {selectedRAM && (
+                  {(selectedRAM || selectedStorage) && (
                     <div className="preview-specs">
-                      <span className="spec-item">RAM: {selectedRAM}</span>
-                      <span className="spec-item">Price: {getMobilePriceWithRAM()}</span>
+                      {selectedRAM && <span className="spec-item">RAM: {selectedRAM}</span>}
+                      {selectedStorage && <span className="spec-item">Storage: {selectedStorage}</span>}
+                      {(selectedRAM || selectedStorage) && <span className="spec-item">Price: {getTotalPrice()}</span>}
                     </div>
                   )}
                 </div>
-                {selectedRAM && (
+                {selectedRAM && selectedStorage ? (
                   <button
                     className="btn-add-to-cart"
                     onClick={() => {
                       const customMobile = {
                         ...selectedMobile,
-                        name: `${selectedMobile.name} (${selectedRAM} RAM)`,
+                        name: `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage})`,
                         customRAM: selectedRAM,
-                        price: getMobilePriceWithRAM()
+                        customStorage: selectedStorage,
+                        price: getTotalPrice()
                       }
                       addToCart(customMobile)
                     }}
                   >
                     Add to Cart
+                  </button>
+                ) : (
+                  <button className="btn-add-to-cart" disabled>
+                    {selectedRAM ? 'Select storage to continue' : 'Select RAM to continue'}
                   </button>
                 )}
               </div>
