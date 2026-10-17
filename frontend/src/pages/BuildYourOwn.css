@@ -11,7 +11,7 @@
 }
 
 .build-header {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -42,22 +42,304 @@
   margin: 0 auto;
 }
 
-.build-placeholder {
-  background-color: var(--card-light, #F5EFE6);
+/* Mobile Grid */
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.build-card {
   border-radius: 28px;
-  padding: 80px 40px;
-  text-align: center;
-  border: 2px dashed rgba(22, 24, 40, 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 470px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  border: 1px solid rgba(22, 24, 40, 0.06);
+  cursor: pointer;
+  position: relative;
 }
 
-.placeholder-icon {
-  font-size: 64px;
-  margin-bottom: 20px;
+.build-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
-.placeholder-text {
+.build-card.selected {
+  border: 2px solid var(--coral-accent, #FA4465);
+  box-shadow: 0 0 0 4px rgba(250, 68, 101, 0.1);
+}
+
+.build-card.card-light {
+  background-color: var(--card-light, #F5EFE6);
+}
+
+.build-card.card-dark {
+  background-color: #1E2033;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.build-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.build-card-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted, #7E8299);
+  text-transform: uppercase;
+}
+
+.build-card-fav {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFEAEF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.build-card-fav.active {
+  background-color: var(--coral-accent, #FA4465);
+}
+
+.build-card-fav.active svg {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.build-img-link {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.build-item-image {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+}
+
+.build-card:hover .build-item-image {
+  transform: scale(1.06);
+}
+
+.build-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.build-item-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin: 0;
+  color: var(--text-primary, #151728);
+}
+
+.card-dark .build-item-title {
+  color: #FFFFFF;
+}
+
+.build-item-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
   color: var(--text-muted, #5E6278);
   margin: 0;
+  line-height: 1.4;
+}
+
+.card-dark .build-item-desc {
+  color: #A6ACCD;
+}
+
+.build-item-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted, #7E8299);
+}
+
+.build-item-rating .star {
+  color: var(--yellow-accent, #FFCC4D);
+  font-size: 14px;
+}
+
+.build-item-rating .rating-val {
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.card-dark .build-item-rating .rating-val {
+  color: #FFFFFF;
+}
+
+.build-card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.build-item-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-primary, #151728);
+}
+
+.card-dark .build-item-price {
+  color: #FFFFFF;
+}
+
+.btn-build-add {
+  background-color: #151728;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-build-add:hover {
+  background-color: var(--coral-accent, #FA4465);
+}
+
+.card-dark .btn-build-add {
+  background-color: var(--coral-accent, #FA4465);
+}
+
+.card-dark .btn-build-add:hover {
+  background-color: #E63554;
+}
+
+/* Selected Badge */
+.build-selected-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: var(--coral-accent, #FA4465);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.selected-check {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* Actions Section */
+.build-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(22, 24, 40, 0.1);
+}
+
+.btn-build-cancel {
+  background-color: transparent;
+  color: var(--text-muted, #5E6278);
+  border: 1.5px solid rgba(22, 24, 40, 0.15);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-build-cancel:hover {
+  background-color: rgba(22, 24, 40, 0.05);
+  border-color: rgba(22, 24, 40, 0.25);
+}
+
+.btn-build-customize {
+  background-color: var(--coral-accent, #FA4465);
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-build-customize:hover {
+  background-color: #E63554;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(250, 68, 101, 0.3);
+}
+
+/* Toast Notification */
+.overhyped-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background-color: #151728;
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.toast-sparkle {
+  color: var(--coral-accent, #FA4465);
+  font-size: 16px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
