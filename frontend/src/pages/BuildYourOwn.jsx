@@ -110,6 +110,20 @@ const BuildYourOwn = () => {
     { name: '120W Charger', price: 79 }
   ]
 
+  const coverOptions = [
+    { name: 'Clear Case', price: 29 },
+    { name: 'Leather Case', price: 49 },
+    { name: 'Rugged Case', price: 59 },
+    { name: 'Designer Case', price: 79 }
+  ]
+
+  const skinOptions = [
+    { name: 'Matte Skin', price: 19 },
+    { name: 'Glossy Skin', price: 24 },
+    { name: 'Carbon Fiber Skin', price: 34 },
+    { name: 'Designer Skin', price: 44 }
+  ]
+
   const getTotalPrice = () => {
     if (!selectedMobile) return 0
     const basePrice = parseInt(selectedMobile.price.replace(/[$,]/g, ''))
