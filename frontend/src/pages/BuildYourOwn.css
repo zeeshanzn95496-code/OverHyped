@@ -164,6 +164,45 @@
   color: #FFFFFF;
 }
 
+/* Color Buttons */
+.color-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.color-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(22, 24, 40, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.color-btn.active {
+  border-color: #151728;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.color-check {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 900;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 /* Preview Panel */
 .build-preview-panel {
   background-color: var(--card-light, #F5EFE6);

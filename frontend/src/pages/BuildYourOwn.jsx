@@ -80,6 +80,7 @@ const BuildYourOwn = () => {
   const [selectedMobile, setSelectedMobile] = useState(null)
   const [selectedRAM, setSelectedRAM] = useState(null)
   const [selectedStorage, setSelectedStorage] = useState(null)
+  const [selectedColor, setSelectedColor] = useState(null)
 
   const ramOptions = [
     { size: '8GB', price: 0 },
@@ -93,6 +94,13 @@ const BuildYourOwn = () => {
     { size: '1TB', price: 150 },
     { size: '2TB', price: 300 },
     { size: '3TB', price: 450 }
+  ]
+
+  const colorOptions = [
+    { name: 'Coral', hex: '#FA4465' },
+    { name: 'Yellow', hex: '#FFCC4D' },
+    { name: 'Teal', hex: '#30B5B8' },
+    { name: 'Purple', hex: '#9D71E8' }
   ]
 
   const getTotalPrice = () => {
@@ -128,7 +136,7 @@ const BuildYourOwn = () => {
                   <button
                     key={mobile.id}
                     className={`mobile-btn ${selectedMobile?.id === mobile.id ? 'active' : ''}`}
-                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null) }}
+                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null); setSelectedColor(null) }}
                   >
                     {mobile.name}
                   </button>
@@ -169,6 +177,25 @@ const BuildYourOwn = () => {
                 </div>
               </div>
             )}
+
+            {selectedMobile && (
+              <div className="color-selection">
+                <h3 className="selection-label">Select Color</h3>
+                <div className="color-buttons">
+                  {colorOptions.map((color) => (
+                    <button
+                      key={color.name}
+                      className={`color-btn ${selectedColor === color.name ? 'active' : ''}`}
+                      onClick={() => setSelectedColor(color.name)}
+                      style={{ backgroundColor: color.hex }}
+                      title={color.name}
+                    >
+                      {selectedColor === color.name && <span className="color-check">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="build-preview-panel">
@@ -178,23 +205,25 @@ const BuildYourOwn = () => {
                 <div className="preview-info">
                   <h3 className="preview-title">{selectedMobile.name}</h3>
                   <p className="preview-desc">{selectedMobile.description}</p>
-                  {(selectedRAM || selectedStorage) && (
+                  {(selectedRAM || selectedStorage || selectedColor) && (
                     <div className="preview-specs">
                       {selectedRAM && <span className="spec-item">RAM: {selectedRAM}</span>}
                       {selectedStorage && <span className="spec-item">Storage: {selectedStorage}</span>}
-                      {(selectedRAM || selectedStorage) && <span className="spec-item">Price: {getTotalPrice()}</span>}
+                      {selectedColor && <span className="spec-item">Color: {selectedColor}</span>}
+                      {(selectedRAM || selectedStorage || selectedColor) && <span className="spec-item">Price: {getTotalPrice()}</span>}
                     </div>
                   )}
                 </div>
-                {selectedRAM && selectedStorage ? (
+                {selectedRAM && selectedStorage && selectedColor ? (
                   <button
                     className="btn-add-to-cart"
                     onClick={() => {
                       const customMobile = {
                         ...selectedMobile,
-                        name: `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage})`,
+                        name: `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor})`,
                         customRAM: selectedRAM,
                         customStorage: selectedStorage,
+                        customColor: selectedColor,
                         price: getTotalPrice()
                       }
                       addToCart(customMobile)
@@ -204,7 +233,7 @@ const BuildYourOwn = () => {
                   </button>
                 ) : (
                   <button className="btn-add-to-cart" disabled>
-                    {selectedRAM ? 'Select storage to continue' : 'Select RAM to continue'}
+                    {!selectedRAM ? 'Select RAM to continue' : !selectedStorage ? 'Select storage to continue' : 'Select color to continue'}
                   </button>
                 )}
               </div>
