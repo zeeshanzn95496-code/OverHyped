@@ -81,6 +81,8 @@ const BuildYourOwn = () => {
   const [selectedRAM, setSelectedRAM] = useState(null)
   const [selectedStorage, setSelectedStorage] = useState(null)
   const [selectedColor, setSelectedColor] = useState(null)
+  const [includeCharger, setIncludeCharger] = useState(false)
+  const [selectedCharger, setSelectedCharger] = useState(null)
 
   const ramOptions = [
     { size: '8GB', price: 0 },
@@ -103,12 +105,18 @@ const BuildYourOwn = () => {
     { name: 'Purple', hex: '#9D71E8' }
   ]
 
+  const chargerOptions = [
+    { name: '67W Charger', price: 49 },
+    { name: '120W Charger', price: 79 }
+  ]
+
   const getTotalPrice = () => {
     if (!selectedMobile) return 0
     const basePrice = parseInt(selectedMobile.price.replace(/[$,]/g, ''))
     const ramPrice = ramOptions.find(r => r.size === selectedRAM)?.price || 0
     const storagePrice = storageOptions.find(s => s.size === selectedStorage)?.price || 0
-    return `$${basePrice + ramPrice + storagePrice}`
+    const chargerPrice = includeCharger && selectedCharger ? chargerOptions.find(c => c.name === selectedCharger)?.price || 0 : 0
+    return `$${basePrice + ramPrice + storagePrice + chargerPrice}`
   }
 
   return (
@@ -136,7 +144,7 @@ const BuildYourOwn = () => {
                   <button
                     key={mobile.id}
                     className={`mobile-btn ${selectedMobile?.id === mobile.id ? 'active' : ''}`}
-                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null); setSelectedColor(null) }}
+                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null); setSelectedColor(null); setIncludeCharger(false); setSelectedCharger(null) }}
                   >
                     {mobile.name}
                   </button>
@@ -196,6 +204,36 @@ const BuildYourOwn = () => {
                 </div>
               </div>
             )}
+
+            {selectedMobile && (
+              <div className="charger-selection">
+                <div className="charger-toggle-wrapper">
+                  <h3 className="selection-label">Add Charger (Optional)</h3>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={includeCharger}
+                      onChange={(e) => { setIncludeCharger(e.target.checked); setSelectedCharger(null) }}
+                    />
+                    <span className="toggle-slider"></span>
+                  </label>
+                </div>
+                {includeCharger && (
+                  <div className="charger-buttons">
+                    {chargerOptions.map((charger) => (
+                      <button
+                        key={charger.name}
+                        className={`charger-btn ${selectedCharger === charger.name ? 'active' : ''}`}
+                        onClick={() => setSelectedCharger(charger.name)}
+                      >
+                        <span className="charger-name">{charger.name}</span>
+                        <span className="charger-price">+${charger.price}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="build-preview-panel">
@@ -205,12 +243,13 @@ const BuildYourOwn = () => {
                 <div className="preview-info">
                   <h3 className="preview-title">{selectedMobile.name}</h3>
                   <p className="preview-desc">{selectedMobile.description}</p>
-                  {(selectedRAM || selectedStorage || selectedColor) && (
+                  {(selectedRAM || selectedStorage || selectedColor || includeCharger) && (
                     <div className="preview-specs">
                       {selectedRAM && <span className="spec-item">RAM: {selectedRAM}</span>}
                       {selectedStorage && <span className="spec-item">Storage: {selectedStorage}</span>}
                       {selectedColor && <span className="spec-item">Color: {selectedColor}</span>}
-                      {(selectedRAM || selectedStorage || selectedColor) && <span className="spec-item">Price: {getTotalPrice()}</span>}
+                      {includeCharger && selectedCharger && <span className="spec-item">Charger: {selectedCharger}</span>}
+                      {(selectedRAM || selectedStorage || selectedColor || includeCharger) && <span className="spec-item">Price: {getTotalPrice()}</span>}
                     </div>
                   )}
                 </div>
@@ -220,10 +259,13 @@ const BuildYourOwn = () => {
                     onClick={() => {
                       const customMobile = {
                         ...selectedMobile,
-                        name: `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor})`,
+                        name: includeCharger && selectedCharger 
+                          ? `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor}, ${selectedCharger})`
+                          : `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor})`,
                         customRAM: selectedRAM,
                         customStorage: selectedStorage,
                         customColor: selectedColor,
+                        customCharger: includeCharger ? selectedCharger : null,
                         price: getTotalPrice()
                       }
                       addToCart(customMobile)

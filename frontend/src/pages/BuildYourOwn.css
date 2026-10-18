@@ -203,6 +203,111 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Charger Selection */
+.charger-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 24, 40, 0.2);
+  transition: 0.3s;
+  border-radius: 28px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #FFFFFF;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--coral-accent, #FA4465);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.charger-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.charger-btn {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.charger-btn:hover {
+  border-color: var(--coral-accent, #FA4465);
+  background-color: rgba(250, 68, 101, 0.05);
+  transform: translateY(-2px);
+}
+
+.charger-btn.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+}
+
+.charger-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.charger-btn.active .charger-name {
+  color: #FFFFFF;
+}
+
+.charger-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #5E6278);
+}
+
+.charger-btn.active .charger-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Preview Panel */
 .build-preview-panel {
   background-color: var(--card-light, #F5EFE6);
