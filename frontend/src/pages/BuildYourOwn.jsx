@@ -108,22 +108,23 @@ const BuildYourOwn = () => {
   ]
 
   const chargerOptions = [
-    { name: '67W Charger', price: 49 },
-    { name: '120W Charger', price: 79 }
+    { name: '67W Charger', price: 149 },
+    { name: '120W Charger', price: 279 }
   ]
 
   const coverOptions = [
-    { name: 'Clear Case', price: 29 },
-    { name: 'Leather Case', price: 49 },
-    { name: 'Rugged Case', price: 59 },
-    { name: 'Designer Case', price: 79 }
+    { name: 'Clear Case', price: 49 },
+    { name: 'Leather Case', price: 59 },
+    { name: 'Rugged Case', price: 69 },
+    { name: 'Designer Case', price: 89 }
   ]
 
   const skinOptions = [
-    { name: 'Matte Skin', price: 19 },
+    { name: 'Matte Skin', price: 39 },
     { name: 'Glossy Skin', price: 24 },
-    { name: 'Carbon Fiber Skin', price: 34 },
-    { name: 'Designer Skin', price: 44 }
+    { name: 'Carbon Fiber Skin', price: 64 },
+    { name: 'Designer Skin', price: 44 },
+    { name: 'mercury limited',price:99}
   ]
 
   const getTotalPrice = () => {
@@ -146,9 +147,9 @@ const BuildYourOwn = () => {
 
       <div className="build-container">
         <div className="build-header">
-          <span className="build-kicker">BUILD YOUR OWN</span>
-          <h1 className="build-title">Customize Your Perfect Device</h1>
-          <p className="build-subtitle">Select a device and customize it with your preferred specifications.</p>
+          <span className="build-kicker">BUILD YOUR OWN NO NEED OF ANY SUPPORT</span>
+          <h1 className="build-title">Customize Your Device</h1>
+          <p className="build-subtitle">select you own specs no will judge you.</p>
         </div>
 
         <div className="build-content">
