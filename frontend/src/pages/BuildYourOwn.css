@@ -16,21 +16,21 @@
 }
 
 .build-kicker {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--coral-accent, #FA4465);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--coral-accent, #5E6278);
   display: block;
   margin-bottom: 12px;
 }
 
 .build-title {
-  font-family: 'Outfit', sans-serif;
+ font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(36px, 4.5vw, 54px);
   font-weight: 950;
-  letter-spacing: -1.5px;
-  color: var(--text-primary, #151728);
+  letter-spacing: 1.5px;
+  color: var(--text-primary, #FA4465);
   margin: 0 0 10px 0;
 }
 

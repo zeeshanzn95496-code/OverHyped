@@ -16,7 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 15px;
+}
+.overhyped-navbar:hover{
+  scale: (1.1);
 }
 
 /* Brand & Tagline */
@@ -42,7 +45,7 @@
 }
 
 .brand-dot {
-  color: var(--coral-accent, #FA4465);
+  color: var(--coral-accent, black);
 }
 
 .brand-micro-tagline {
