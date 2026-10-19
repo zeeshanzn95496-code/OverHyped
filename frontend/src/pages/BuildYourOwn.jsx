@@ -86,12 +86,13 @@ const BuildYourOwn = () => {
 
   const ramOptions = [
     { size: '8GB', price: 0 },
-    { size: '16GB', price: 100 },
-    { size: '24GB', price: 200 },
-    { size: '32GB', price: 300 }
+    { size: '16GB', price: 150 },
+    { size: '24GB', price: 250 },
+    { size: '32GB', price: 350 }
   ]
 
   const storageOptions = [
+    {size: '512GB',price:  140},
     { size: '780GB', price: 0 },
     { size: '1TB', price: 150 },
     { size: '2TB', price: 300 },
@@ -102,7 +103,8 @@ const BuildYourOwn = () => {
     { name: 'Coral', hex: '#FA4465' },
     { name: 'Yellow', hex: '#FFCC4D' },
     { name: 'Teal', hex: '#30B5B8' },
-    { name: 'Purple', hex: '#9D71E8' }
+    { name: 'Purple', hex: '#9D71E8' },
+    {name: 'black', hex: 'black'}
   ]
 
   const chargerOptions = [
