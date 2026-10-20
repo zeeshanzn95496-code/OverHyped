@@ -6,7 +6,7 @@ import './Shop.css'
 
 const fullCatalog = [
   {
-    id: 1,
+    id: 0,
     name: 'Halo One',
     category: 'Phones',
     description: 'The conversation starter',
@@ -14,6 +14,17 @@ const fullCatalog = [
     reviews: '3 owner reviews',
     price: '$799',
     image: '/images/halo-hero.png',
+    theme: 'danger'
+  },
+  {
+ id: 1,
+    name: 'Halo tab',
+    category: 'Phones',
+    description: 'The 16 inch tab',
+    rating: '4.7',
+    reviews: '300 owner reviews',
+    price: '$999',
+    image: '',
     theme: 'coral'
   },
   {
@@ -138,7 +149,19 @@ const fullCatalog = [
     theme: 'coral'
   },
   {
-    id: 13,
+    id:13,
+     name: 'Halo Powerbank 6700W fast',
+    category: 'Power',
+    description: 'fast. Lightning charge.',
+    rating: '4.4',
+    reviews: '800 owner reviews',
+    price: '$129',
+    image: '/images/acc-charge.png',
+    theme: 'coral'
+
+  },
+  {
+    id: 14,
     name: 'Halo Wired Headphone',
     category: 'Audio',
     description: 'Pure sound. No compromise.',
@@ -149,7 +172,7 @@ const fullCatalog = [
     theme: 'dark'
   },
   {
-    id: 14,
+    id: 15,
     name: 'Halo Wireless Headphone',
     category: 'Audio',
     description: 'Freedom to move. Studio quality.',
@@ -160,7 +183,7 @@ const fullCatalog = [
     theme: 'teal'
   },
   {
-    id: 15,
+    id: 16,
     name: 'Halo Charger Cover Batman',
     category: 'Protection',
     description: 'Batman cartoon. Hero style.',
@@ -171,7 +194,7 @@ const fullCatalog = [
     theme: 'dark'
   },
   {
-    id: 16,
+    id: 17,
     name: 'Halo Superman Charger Cover',
     category: 'Protection',
     description: 'Superman cartoon. Man of steel.',
@@ -183,7 +206,7 @@ const fullCatalog = [
   }
 ]
 
-const categories = ['All', 'Phones', 'Audio', 'Power', 'Protection']
+const categories = ['All', 'Phones', 'AUDIO', 'Powerbank', 'covers']
 
 const Shop = ({ onOpenFilm }) => {
   const { addToCart, notification: cartNotification } = useCart()
