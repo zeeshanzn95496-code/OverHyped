@@ -19,6 +19,18 @@ const testimonials = [
     quote: "“The color is ridiculous. The camera is even better.”",
     author: "Jia L. — Halo Mini in Tide",
     theme: "teal"
+  },
+   {
+    location: "VERIFIED OWNER / AURANGABAD",
+    quote: "“The color options are pretty good,people are ready to sell their kidneys for this masterpiece”",
+    author: "Jia L. — Halo Mini in Tide",
+    theme: "#00F0FF"
+  },
+   {
+    location: "VERIFIED OWNER / DUBAI",
+    quote: "“the camera quality is soo good i can cleary see burj khalifa in my triple fold,welldone overhyped ”",
+    author: "Jia L. — Halo Mini in Tide",
+    theme: "#FF0055"
   }
 ]
 

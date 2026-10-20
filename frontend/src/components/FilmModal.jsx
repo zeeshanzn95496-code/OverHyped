@@ -22,12 +22,12 @@ const FilmModal = ({ isOpen, onClose, title = "Halo One: The Film" }) => {
             </div>
             <div className="film-caption">
               <h4>"A Little Extra by Design"</h4>
-              <p>Directed in New York. Shot on Halo One 48MP Sensor.</p>
+              <p> Shot on Halo One 48MP Sensor.</p>
             </div>
           </div>
         </div>
         <div className="film-modal-footer">
-          <p>Halo One arrives in Coral, Tide, and Space Black with aerospace-grade aluminum and bespoke haptic engine.</p>
+          <p>Halo One arrives in Coral, Tide and Space Black with aerospace-grade aluminum and bespoke haptic engine.</p>
         </div>
       </div>
     </div>

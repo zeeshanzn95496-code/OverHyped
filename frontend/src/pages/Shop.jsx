@@ -14,7 +14,7 @@ const fullCatalog = [
     reviews: '3 owner reviews',
     price: '$799',
     image: '/images/halo-hero.png',
-    theme: 'danger'
+    theme: 'dark'
   },
   {
  id: 1,
