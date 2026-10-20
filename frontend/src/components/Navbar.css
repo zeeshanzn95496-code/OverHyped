@@ -89,8 +89,8 @@
 }
 
 .nav-action-btn {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 1px solid rgba(22, 24, 40, 0.08);
   background-color: var(--card-bg, #FFFFFF);
@@ -106,8 +106,9 @@
 
 .nav-action-btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(22, 24, 40, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+   box-shadow: 0 6px 16px rgba(250, 68, 101, 0.35);
+   background-color: var(--coral-accent, #FA4465);
+
 }
 
 /* Bag Button - Coral Red as shown in screenshot */
@@ -118,6 +119,7 @@
 }
 
 .nav-action-btn.btn-bag:hover {
+  transform: translateY(-2px);
   background-color: #E63554;
   box-shadow: 0 6px 16px rgba(250, 68, 101, 0.35);
 }

@@ -149,7 +149,7 @@
 }
 
 .inbox-submit-btn:hover {
-  transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.5) rotate(-45deg);
   background-color: #FFE17D;
 }
 

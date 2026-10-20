@@ -45,13 +45,18 @@ export const SupportModal = ({ isOpen, onClose, mode = "support" }) => {
                 <span className="store-addr">5-7-22 Minamiaoyama, Minato-ku</span>
                 <span className="store-hours">Open Daily 11:00 AM – 8:00 PM</span>
               </div>
+               <div className="store-item">
+                <span className="store-city">India  &bull; Mumbai </span>
+                <span className="store-addr">788 Antilia on Altamount Road </span>
+                <span className="store-hours">Open Daily 12:00 PM – 9:00 PM</span>
+              </div>
             </div>
           </div>
         ) : (
           <div>
-            <div className="support-badge">CONCIERGE & CARE</div>
-            <h3 className="support-title">Talk to a real human.</h3>
-            <p className="support-desc">No automated loops. Speak directly with a hardware specialist or design engineer.</p>
+            <div className="support-badge">WE RESPECT YOUR WORDS</div>
+            <h3 className="support-title">fell free to complain .</h3>
+            <p className="support-desc">dpn't hesitate to talk </p>
             {formSent ? (
               <div className="support-sent-box">
                 <div className="sent-check">✓</div>

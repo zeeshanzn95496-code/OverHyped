@@ -15,13 +15,13 @@ const Hero = ({ onOpenFilm }) => {
       <div className="hero-container">
         {/* Left Column: Hero Typography & Actions */}
         <div className="hero-editorial">
-          <div className="hero-origin-tag">NEW YORK / EST. 2024</div>
+          <div className="hero-origin-tag">NEW YORK / IND. 2026</div>
           <h1 className="hero-main-heading">
-            Make an <br />
+            MAKE an <br />
             <span className="heading-coral">entrance.</span>
           </h1>
           <p className="hero-copy">
-            Phones for people who think a little louder. Meet the device that refuses to be background noise.
+            Phones for people who think a little more. Meet the device that refuses to be ordinary.
           </p>
 
           <div className="hero-cta-group">
@@ -35,7 +35,7 @@ const Hero = ({ onOpenFilm }) => {
               className="hero-btn-film"
               onClick={() => onOpenFilm && onOpenFilm("Halo One: The Film")}
             >
-              <span className="film-play-icon">▶</span> Watch the film
+              <span className="film-play-icon">▶</span> Watch trailer
             </button>
           </div>
         </div>
@@ -46,8 +46,8 @@ const Hero = ({ onOpenFilm }) => {
 
           {/* Floating Battery Badge */}
           <div className="hero-pill-battery">
-            <span className="battery-label">BATTERY</span>
-            <span className="battery-val">2 d</span>
+            <span className="battery-label">BATTERY LIFE </span>
+            <span className="battery-val">2 days</span>
           </div>
 
           {/* Phone Render */}
@@ -62,11 +62,11 @@ const Hero = ({ onOpenFilm }) => {
           {/* Floating Camera Badge */}
           <div className="hero-card-camera">
             <div className="camera-spec-line">
-              <span className="camera-label">CAMERA</span>
+              <span className="camera-label">BEST CAMERA</span>
               <span className="camera-val">50 MP</span>
             </div>
             <div className="camera-sparkle-text">
-              <span className="sparkle-icon">✦</span> Looks good from here
+              <span className="sparkle-icon">✦</span> Looks matters 
             </div>
           </div>
         </div>

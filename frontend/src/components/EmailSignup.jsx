@@ -26,7 +26,7 @@ const EmailSignup = ({ onTalkToHuman, onFindStore }) => {
         <div className="inbox-grid">
           {/* Left Column: Headline */}
           <div className="inbox-left">
-            <span className="inbox-kicker">06 / STAY IN THE KNOW</span>
+            <span className="inbox-kicker">STAY IN TOUCH WITH US</span>
             <h2 className="inbox-title">
               Your inbox <br />
               deserves <br />
@@ -51,7 +51,7 @@ const EmailSignup = ({ onTalkToHuman, onFindStore }) => {
                   <input
                     type="email"
                     className="inbox-input"
-                    placeholder="you@somewhere.com"
+                    placeholder="xyz@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
