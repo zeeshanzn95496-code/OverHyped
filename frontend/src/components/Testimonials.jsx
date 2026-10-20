@@ -24,13 +24,13 @@ const testimonials = [
     location: "VERIFIED OWNER / AURANGABAD",
     quote: "“The color options are pretty good,people are ready to sell their kidneys for this masterpiece”",
     author: "Jia L. — Halo Mini in Tide",
-    theme: "#00F0FF"
+    theme: "teal"
   },
    {
     location: "VERIFIED OWNER / DUBAI",
     quote: "“the camera quality is soo good i can cleary see burj khalifa in my triple fold,welldone overhyped ”",
     author: "Jia L. — Halo Mini in Tide",
-    theme: "#FF0055"
+    theme: "navy"
   }
 ]
 
