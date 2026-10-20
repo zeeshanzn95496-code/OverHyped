@@ -83,6 +83,10 @@ const BuildYourOwn = () => {
   const [selectedColor, setSelectedColor] = useState(null)
   const [includeCharger, setIncludeCharger] = useState(false)
   const [selectedCharger, setSelectedCharger] = useState(null)
+  const [includeCover, setIncludeCover] = useState(false)
+  const [selectedCover, setSelectedCover] = useState(null)
+  const [includeSkin, setIncludeSkin] = useState(false)
+  const [selectedSkin, setSelectedSkin] = useState(null)
 
   const ramOptions = [
     { size: '8GB', price: 0 },
@@ -133,7 +137,9 @@ const BuildYourOwn = () => {
     const ramPrice = ramOptions.find(r => r.size === selectedRAM)?.price || 0
     const storagePrice = storageOptions.find(s => s.size === selectedStorage)?.price || 0
     const chargerPrice = includeCharger && selectedCharger ? chargerOptions.find(c => c.name === selectedCharger)?.price || 0 : 0
-    return `$${basePrice + ramPrice + storagePrice + chargerPrice}`
+    const coverPrice = includeCover && selectedCover ? coverOptions.find(c => c.name === selectedCover)?.price || 0 : 0
+    const skinPrice = includeSkin && selectedSkin ? skinOptions.find(s => s.name === selectedSkin)?.price || 0 : 0
+    return `$${basePrice + ramPrice + storagePrice + chargerPrice + coverPrice + skinPrice}`
   }
 
   return (
@@ -161,7 +167,7 @@ const BuildYourOwn = () => {
                   <button
                     key={mobile.id}
                     className={`mobile-btn ${selectedMobile?.id === mobile.id ? 'active' : ''}`}
-                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null); setSelectedColor(null); setIncludeCharger(false); setSelectedCharger(null) }}
+                    onClick={() => { setSelectedMobile(mobile); setSelectedRAM(null); setSelectedStorage(null); setSelectedColor(null); setIncludeCharger(false); setSelectedCharger(null); setIncludeCover(false); setSelectedCover(null); setIncludeSkin(false); setSelectedSkin(null) }}
                   >
                     {mobile.name}
                   </button>
@@ -251,6 +257,66 @@ const BuildYourOwn = () => {
                 )}
               </div>
             )}
+
+            {selectedMobile && (
+              <div className="cover-selection">
+                <div className="cover-toggle-wrapper">
+                  <h3 className="selection-label">Add Cover (Optional)</h3>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={includeCover}
+                      onChange={(e) => { setIncludeCover(e.target.checked); setSelectedCover(null) }}
+                    />
+                    <span className="toggle-slider"></span>
+                  </label>
+                </div>
+                {includeCover && (
+                  <div className="cover-buttons">
+                    {coverOptions.map((cover) => (
+                      <button
+                        key={cover.name}
+                        className={`cover-btn ${selectedCover === cover.name ? 'active' : ''}`}
+                        onClick={() => setSelectedCover(cover.name)}
+                      >
+                        <span className="cover-name">{cover.name}</span>
+                        <span className="cover-price">+${cover.price}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {selectedMobile && (
+              <div className="skin-selection">
+                <div className="skin-toggle-wrapper">
+                  <h3 className="selection-label">Add Skin (Optional)</h3>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={includeSkin}
+                      onChange={(e) => { setIncludeSkin(e.target.checked); setSelectedSkin(null) }}
+                    />
+                    <span className="toggle-slider"></span>
+                  </label>
+                </div>
+                {includeSkin && (
+                  <div className="skin-buttons">
+                    {skinOptions.map((skin) => (
+                      <button
+                        key={skin.name}
+                        className={`skin-btn ${selectedSkin === skin.name ? 'active' : ''}`}
+                        onClick={() => setSelectedSkin(skin.name)}
+                      >
+                        <span className="skin-name">{skin.name}</span>
+                        <span className="skin-price">+${skin.price}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="build-preview-panel">
@@ -260,13 +326,15 @@ const BuildYourOwn = () => {
                 <div className="preview-info">
                   <h3 className="preview-title">{selectedMobile.name}</h3>
                   <p className="preview-desc">{selectedMobile.description}</p>
-                  {(selectedRAM || selectedStorage || selectedColor || includeCharger) && (
+                  {(selectedRAM || selectedStorage || selectedColor || includeCharger || includeCover || includeSkin) && (
                     <div className="preview-specs">
                       {selectedRAM && <span className="spec-item">RAM: {selectedRAM}</span>}
                       {selectedStorage && <span className="spec-item">Storage: {selectedStorage}</span>}
                       {selectedColor && <span className="spec-item">Color: {selectedColor}</span>}
                       {includeCharger && selectedCharger && <span className="spec-item">Charger: {selectedCharger}</span>}
-                      {(selectedRAM || selectedStorage || selectedColor || includeCharger) && <span className="spec-item">Price: {getTotalPrice()}</span>}
+                      {includeCover && selectedCover && <span className="spec-item">Cover: {selectedCover}</span>}
+                      {includeSkin && selectedSkin && <span className="spec-item">Skin: {selectedSkin}</span>}
+                      {(selectedRAM || selectedStorage || selectedColor || includeCharger || includeCover || includeSkin) && <span className="spec-item">Price: {getTotalPrice()}</span>}
                     </div>
                   )}
                 </div>
@@ -274,15 +342,27 @@ const BuildYourOwn = () => {
                   <button
                     className="btn-add-to-cart"
                     onClick={() => {
+                      let productName = `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor}`
+                      if (includeCharger && selectedCharger) {
+                        productName += `, ${selectedCharger}`
+                      }
+                      if (includeCover && selectedCover) {
+                        productName += `, ${selectedCover}`
+                      }
+                      if (includeSkin && selectedSkin) {
+                        productName += `, ${selectedSkin}`
+                      }
+                      productName += ')'
+
                       const customMobile = {
                         ...selectedMobile,
-                        name: includeCharger && selectedCharger 
-                          ? `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor}, ${selectedCharger})`
-                          : `${selectedMobile.name} (${selectedRAM} RAM, ${selectedStorage}, ${selectedColor})`,
+                        name: productName,
                         customRAM: selectedRAM,
                         customStorage: selectedStorage,
                         customColor: selectedColor,
                         customCharger: includeCharger ? selectedCharger : null,
+                        customCover: includeCover ? selectedCover : null,
+                        customSkin: includeSkin ? selectedSkin : null,
                         price: getTotalPrice()
                       }
                       addToCart(customMobile)

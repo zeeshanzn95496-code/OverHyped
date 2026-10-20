@@ -309,6 +309,126 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Cover Selection */
+.cover-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cover-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cover-btn {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cover-btn:hover {
+  border-color: var(--coral-accent, #FA4465);
+  background-color: rgba(250, 68, 101, 0.05);
+  transform: translateY(-2px);
+}
+
+.cover-btn.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+}
+
+.cover-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.cover-btn.active .cover-name {
+  color: #FFFFFF;
+}
+
+.cover-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #5E6278);
+}
+
+.cover-btn.active .cover-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Skin Selection */
+.skin-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.skin-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.skin-btn {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.skin-btn:hover {
+  border-color: var(--coral-accent, #FA4465);
+  background-color: rgba(250, 68, 101, 0.05);
+  transform: translateY(-2px);
+}
+
+.skin-btn.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+}
+
+.skin-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.skin-btn.active .skin-name {
+  color: #FFFFFF;
+}
+
+.skin-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #5E6278);
+}
+
+.skin-btn.active .skin-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Preview Panel */
 .build-preview-panel {
   background-color: var(--card-light, #F5EFE6);
