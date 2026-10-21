@@ -429,6 +429,79 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Accessory Selection */
+.accessory-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.accessory-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.accessory-btn {
+  background-color: #FFFFFF;
+  border: 2px solid rgba(22, 24, 40, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.accessory-btn:hover {
+  border-color: var(--coral-accent, #FA4465);
+  background-color: rgba(250, 68, 101, 0.05);
+  transform: translateY(-2px);
+}
+
+.accessory-btn.active {
+  background-color: var(--coral-accent, #FA4465);
+  border-color: var(--coral-accent, #FA4465);
+}
+
+.accessory-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary, #151728);
+}
+
+.accessory-btn.active .accessory-name {
+  color: #FFFFFF;
+}
+
+.accessory-category {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted, #5E6278);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accessory-btn.active .accessory-category {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.accessory-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #5E6278);
+}
+
+.accessory-btn.active .accessory-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Preview Panel */
 .build-preview-panel {
   background-color: var(--card-light, #F5EFE6);
