@@ -24,8 +24,8 @@
 }
 
 .btn-reset {
-  background-color: transparent;
-  color: var(--text-muted, #5E6278);
+  background-color: yellow;
+  color: var(--text-muted, #F5EFE6);
   border: 2px solid rgba(22, 24, 40, 0.15);
   font-family: 'Outfit', sans-serif;
   font-size: 14px;
@@ -38,7 +38,7 @@
 }
 
 .btn-reset:hover {
-  background-color: rgba(22, 24, 40, 0.05);
+  background-color:#FA4465;
   border-color: rgba(22, 24, 40, 0.25);
   color: var(--text-primary, #151728);
 }

@@ -156,17 +156,8 @@ const BuildYourOwn = () => {
 
   const handleReset = () => {
     setSelectedMobile(null)
-    setSelectedRAM(null)
-    setSelectedStorage(null)
-    setSelectedColor(null)
-    setIncludeCharger(false)
-    setSelectedCharger(null)
-    setIncludeCover(false)
-    setSelectedCover(null)
-    setIncludeSkin(false)
-    setSelectedSkin(null)
-    setIncludeAccessory(false)
-    setSelectedAccessory(null)
+   
+   
   }
 
   return (
