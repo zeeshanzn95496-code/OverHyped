@@ -134,12 +134,12 @@ const BuildYourOwn = () => {
   ]
 
   const accessoryOptions = [
-    { name: 'Buds', category: 'Audio', price: 129 },
-    { name: 'Halo Wired Headphone', category: 'Audio', price: 89 },
-    { name: 'Halo Wireless Headphone', category: 'Audio', price: 199 },
-    { name: 'Halo Powerbank 100W', category: 'Power', price: 89 },
-    { name: 'Halo Powerbank 3000W', category: 'Power', price: 149 },
-    { name: 'Halo Powerbank 11000W Superfast', category: 'Power', price: 199 }
+    { name: 'Buds',  price: 149 },
+    { name: 'Halo Wired Headphone', price: 90 },
+    { name: 'Halo Wireless Headphone', price: 209 },
+    { name: 'Halo Powerbank 100W', price: 98 },
+    { name: 'Halo Powerbank 3000W', price: 209 },
+    { name: 'Halo Powerbank 11000W Superfast', price: 209 }
   ]
 
   const getTotalPrice = () => {
