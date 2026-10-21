@@ -12,7 +12,35 @@
 
 .build-header {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.build-header-content {
+  flex: 1;
   text-align: center;
+}
+
+.btn-reset {
+  background-color: transparent;
+  color: var(--text-muted, #5E6278);
+  border: 2px solid rgba(22, 24, 40, 0.15);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-reset:hover {
+  background-color: rgba(22, 24, 40, 0.05);
+  border-color: rgba(22, 24, 40, 0.25);
+  color: var(--text-primary, #151728);
 }
 
 .build-kicker {
@@ -39,7 +67,7 @@
   font-size: 16px;
   color: var(--text-muted, #5E6278);
   max-width: 540px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Build Content Layout */
@@ -650,6 +678,15 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+  .build-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .build-header-content {
+    width: 100%;
+  }
+
   .build-content {
     grid-template-columns: 1fr;
   }

@@ -154,6 +154,21 @@ const BuildYourOwn = () => {
     return `$${basePrice + ramPrice + storagePrice + chargerPrice + coverPrice + skinPrice + accessoryPrice}`
   }
 
+  const handleReset = () => {
+    setSelectedMobile(null)
+    setSelectedRAM(null)
+    setSelectedStorage(null)
+    setSelectedColor(null)
+    setIncludeCharger(false)
+    setSelectedCharger(null)
+    setIncludeCover(false)
+    setSelectedCover(null)
+    setIncludeSkin(false)
+    setSelectedSkin(null)
+    setIncludeAccessory(false)
+    setSelectedAccessory(null)
+  }
+
   return (
     <div className="build-your-own-page">
       {notification && (
@@ -165,9 +180,14 @@ const BuildYourOwn = () => {
 
       <div className="build-container">
         <div className="build-header">
-          <span className="build-kicker">BUILD YOUR OWN NO NEED OF ANY SUPPORT</span>
-          <h1 className="build-title">Customize Your Device</h1>
-          <p className="build-subtitle">select you own specs no will judge you.</p>
+          <div className="build-header-content">
+            <span className="build-kicker">BUILD YOUR OWN NO NEED OF ANY SUPPORT</span>
+            <h1 className="build-title">Customize Your Device</h1>
+            <p className="build-subtitle">select you own specs no will judge you.</p>
+          </div>
+          <button className="btn-reset" onClick={handleReset}>
+            Reset
+          </button>
         </div>
 
         <div className="build-content">
