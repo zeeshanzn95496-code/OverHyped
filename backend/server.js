@@ -4,6 +4,11 @@ const cors = require('cors')
 const app = express()
 
 app.use(cors())
+app.use(express.json())
+
+app.get("/health", (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() })
+})
 
 app.get("/tagline", (req, res)=>{
     res.json({
@@ -35,6 +40,15 @@ const accessories = [
 
 app.get("/accessories", (req, res)=>{
     res.json(accessories);
+})
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' })
+})
+
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).json({ error: 'Something went wrong!' })
 })
 
 app.listen(3000, ()=>{
