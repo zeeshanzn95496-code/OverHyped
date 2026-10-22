@@ -215,12 +215,22 @@ const Shop = ({ onOpenFilm }) => {
 
   const [activeTab, setActiveTab] = useState('All')
   const [searchTerm, setSearchTerm] = useState('')
+  const [sortBy, setSortBy] = useState('default')
 
   const filtered = fullCatalog.filter(item => {
     const matchCat = activeTab === 'All' || item.category === activeTab
     const matchSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase())
     return matchCat && matchSearch
+  }).sort((a, b) => {
+    if (sortBy === 'price-low') {
+      return parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, ''))
+    } else if (sortBy === 'price-high') {
+      return parseInt(b.price.replace(/[^0-9]/g, '')) - parseInt(a.price.replace(/[^0-9]/g, ''))
+    } else if (sortBy === 'rating') {
+      return parseFloat(b.rating) - parseFloat(a.rating)
+    }
+    return 0
   })
 
   return (
@@ -249,6 +259,17 @@ const Shop = ({ onOpenFilm }) => {
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
             />
+
+            <select
+              className="shop-sort-select"
+              value={sortBy}
+              onChange={e => setSortBy(e.target.value)}
+            >
+              <option value="default">Sort by: Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Rating</option>
+            </select>
           </div>
         </div>
 
