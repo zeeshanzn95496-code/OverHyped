@@ -7,6 +7,7 @@ import TheSupportingCast from '../components/TheSupportingCast'
 import APointOfView from '../components/APointOfView'
 import Testimonials from '../components/Testimonials'
 import EmailSignup from '../components/EmailSignup'
+import BackToTop from '../components/BackToTop'
 
 const HomePage = ({ onOpenFilm, onTalkToHuman, onFindStore }) => {
   return (
@@ -37,6 +38,9 @@ const HomePage = ({ onOpenFilm, onTalkToHuman, onFindStore }) => {
         onTalkToHuman={onTalkToHuman}
         onFindStore={onFindStore}
       />
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   )
 }
