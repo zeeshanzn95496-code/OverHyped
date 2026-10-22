@@ -284,6 +284,9 @@ const Shop = ({ onOpenFilm }) => {
               {cat}
             </button>
           ))}
+          <span className="shop-product-count">
+            Showing {filtered.length} products
+          </span>
         </div>
 
         {/* Product Cards Grid */}
