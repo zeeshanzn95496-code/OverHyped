@@ -206,7 +206,7 @@ const fullCatalog = [
   }
 ]
 
-const categories = ['All', 'Phones', 'AUDIO', 'Powerbank', 'covers']
+const categories = ['All', 'Phones', 'Audio', 'Power', 'Protection']
 
 const Shop = ({ onOpenFilm }) => {
   const { addToCart, notification: cartNotification } = useCart()
@@ -289,7 +289,7 @@ const Shop = ({ onOpenFilm }) => {
                   </button>
                 </div>
 
-                <Link to={product.category === 'Phones' ? `/product/${product.id}` : '#'} className="shop-img-link">
+                <Link to={`/product/${product.id}`} className="shop-img-link">
                   <img src={product.image} alt={product.name} className="shop-item-image" />
                 </Link>
 
