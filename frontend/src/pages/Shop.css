@@ -53,9 +53,17 @@
   align-items: center;
 }
 
-.shop-search-input {
+.shop-search-input-wrapper {
   flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.shop-search-input {
+  width: 100%;
   padding: 12px 20px;
+  padding-right: 40px;
   border-radius: 999px;
   border: 1.5px solid rgba(22, 24, 40, 0.12);
   background: var(--card-light, #F5EFE6);
@@ -68,6 +76,30 @@
 .shop-search-input:focus {
   border-color: var(--coral-accent, #FA4465);
   background: #FFFFFF;
+}
+
+.shop-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: rgba(22, 24, 40, 0.08);
+  color: var(--text-muted, #5E6278);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.shop-search-clear:hover {
+  background: var(--coral-accent, #FA4465);
+  color: white;
 }
 
 .shop-sort-select {

@@ -217,6 +217,10 @@ const Shop = ({ onOpenFilm }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [sortBy, setSortBy] = useState('default')
 
+  const clearSearch = () => {
+    setSearchTerm('')
+  }
+
   const filtered = fullCatalog.filter(item => {
     const matchCat = activeTab === 'All' || item.category === activeTab
     const matchSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -252,13 +256,24 @@ const Shop = ({ onOpenFilm }) => {
           </div>
 
           <div className="shop-search-wrapper">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="shop-search-input"
-              value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-            />
+            <div className="shop-search-input-wrapper">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="shop-search-input"
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+              {searchTerm && (
+                <button
+                  className="shop-search-clear"
+                  onClick={clearSearch}
+                  aria-label="Clear search"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
 
             <select
               className="shop-sort-select"
